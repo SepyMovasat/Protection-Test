@@ -1,7 +1,7 @@
 # Protest | Protection-Test
 ## Test your system's protection like a pro!
 
-![image](https://user-images.githubusercontent.com/108173887/182578960-68c8552b-a301-498f-bfa8-d6cf5e4be2b5.png)
+![image](https://user-images.githubusercontent.com/108173887/182585417-4c25a377-7a88-4ff1-ae47-e97d4bda3c07.png)
 
 ### Do you want test your system vs zero-day ransomware and backdoor?
 * Just run this program, choose an option and get started!
