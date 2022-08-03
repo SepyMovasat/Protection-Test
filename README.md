@@ -8,7 +8,7 @@
 * To make sure you are safe from zero-day malware. Cause zero-day malware is not in the signatures of your anti-virus software. So, the only way to block a zero-day malware is to have a great behavioral protection that stops malcious activities.
 * Easy to use 
 * Multiple options
-* To have a great ux (user exprience)
+* To have a great ux (user experience)
 * Open source 
 * Safe test environment
 
