@@ -1,9 +1,8 @@
 # Created by @TheCcortex | Under MIT License #
-# IMPORTANT: JUST USE THIS FOR TESTING ANTI-VIRUS SOFTWARE """ONLY""" | NOT FOR H@CKING AND R@NSOM #
-# Please note: Although that this is for testing purposes, It may create critical problems or file loss#
+# IMPORTANT: JUST USE THIS FOR TESTING ANTI-VIRUS SOFTWARE """ONLY""" #
+# Please note: Although that this is for testing purposes, It may create problems or file loss#
 # SO PLEASE USE THIS PYTHON SCRIPT WITH A LOT OF CARE #
 # JUST FOR WINDOWS #
-# NOT RESPONSIBLE FOR ANY DAMAGE #
 
 import colorama
 import subprocess
@@ -484,11 +483,12 @@ def main_menu():
 ██╔═══╝░██╔══██╗██║░░██║░░░██║░░░██╔══╝░░░╚═══██╗░░░██║░░░
 ██║░░░░░██║░░██║╚█████╔╝░░░██║░░░███████╗██████╔╝░░░██║░░░
 ╚═╝░░░░░╚═╝░░╚═╝░╚════╝░░░░╚═╝░░░╚══════╝╚═════╝░░░░╚═╝░░░""")
-    print(colorama.Fore.GREEN + "- Test your system's protection! ")
+    print(colorama.Fore.GREEN + "- Test your system's protection like a pro! ")
     print(colorama.Fore.MAGENTA + "\n1- Test Ransomware Protection\n ")
     print(colorama.Fore.MAGENTA + "2- Test Firewall Protection\n")
     print(colorama.Fore.MAGENTA + "3- Roll back firewall test changes")
-    print(colorama.Fore.GREEN + "\nBy @TheCcortex - MIT licence")
+    print(colorama.Fore.MAGENTA + "\n4- Exit")
+    print(colorama.Fore.GREEN + "\nBy @TheCcortex - MIT license")
     main_inp = input(colorama.Fore.RESET + "Which one? ")
     if main_inp == "1":
         tell_the_danger()
@@ -496,6 +496,19 @@ def main_menu():
         BrokenWall()
     elif main_inp == "3":
         Roll_back()
+    elif main_inp == "4":
+        cls()
+        print(colorama.Fore.GREEN + """
+░██████╗███████╗███████╗  ██╗░░░██╗░█████╗░██╗░░░██╗██╗
+██╔════╝██╔════╝██╔════╝  ╚██╗░██╔╝██╔══██╗██║░░░██║██║
+╚█████╗░█████╗░░█████╗░░  ░╚████╔╝░██║░░██║██║░░░██║██║
+░╚═══██╗██╔══╝░░██╔══╝░░  ░░╚██╔╝░░██║░░██║██║░░░██║╚═╝
+██████╔╝███████╗███████╗  ░░░██║░░░╚█████╔╝╚██████╔╝██╗
+╚═════╝░╚══════╝╚══════╝  ░░░╚═╝░░░░╚════╝░░╚═════╝░╚═╝
+""")
+        print(colorama.Fore.RESET + "Exiting in 4 seconds...")
+        time.sleep(4)
+        exit()
     else:
         cls()
         print("""
