@@ -1,8 +1,9 @@
 # Created by @TheCcortex | Under MIT License #
-# IMPORTANT: JUST USE THIS FOR TESTING ANTI-VIRUS SOFTWARE """ONLY""" #
-# Please note: Although that this is for testing purposes, It may create problems or file loss#
+# IMPORTANT: JUST USE THIS FOR TESTING ANTI-VIRUS SOFTWARE """ONLY""" | NOT FOR H@CKING AND R@NSOM #
+# Please note: Although that this is for testing purposes, It may create critical problems or file loss#
 # SO PLEASE USE THIS PYTHON SCRIPT WITH A LOT OF CARE #
 # JUST FOR WINDOWS #
+# NOT RESPONSIBLE FOR ANY DAMAGE #
 
 import colorama
 import subprocess
@@ -78,7 +79,7 @@ def Ransom():
     Info_Style()
     print("Starting the ransomware test")
     time.sleep(6)
-    letssee = subprocess.call([sys.executable, "Python//The-Bad-Guys/Encrypt.py"])
+    letssee = subprocess.call([sys.executable, "The-Bad-Guys/Encrypt.py"])
     if letssee == "1":
         cls()
         print(colorama.Fore.MAGENTA +"""
