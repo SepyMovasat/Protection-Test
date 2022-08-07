@@ -80,7 +80,7 @@ def Ransom():
         Info_Style()
         print("Starting the ransomware test")
         time.sleep(6)
-        letssee = subprocess.call([sys.executable, "Python//The-Bad-Guys/Encrypt.py"])
+        letssee = subprocess.call([sys.executable, "The-Bad-Guys//Encrypt.py"])
         if letssee == "1":
             cls()
             print(colorama.Fore.MAGENTA +"""
