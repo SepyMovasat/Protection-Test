@@ -80,7 +80,7 @@ def Ransom():
         Info_Style()
         print("Starting the ransomware test")
         time.sleep(6)
-        letssee = subprocess.call([sys.executable, "The-Bad-Guys//Encrypt.py"])
+        letssee = subprocess.call([sys.executable, "Python//The-Bad-Guys/Encrypt.py"])
         if letssee == "1":
             cls()
             print(colorama.Fore.MAGENTA +"""
@@ -173,7 +173,7 @@ def BrokenWall():
         Info_Style()
         print("Trying to disable your firewall...")
         time.sleep(7)
-        proc = subprocess.Popen(["The-Bad-Guys\\BrokenWall.bat"], stdout=subprocess.PIPE, shell=True)
+        proc = subprocess.Popen(["Python\\The-Bad-Guys\\BrokenWall.bat"], stdout=subprocess.PIPE, shell=True)
         (res,err) = proc.communicate()
         proc = err
         if proc == 1:
@@ -184,7 +184,7 @@ def BrokenWall():
             Info_Style()
             print("Now trying to add an exclusion to your firewall...")
             time.sleep(7)
-            proc = subprocess.Popen(["The-Bad-Guys\\BadExclusion.bat"], stdout=subprocess.PIPE, shell=True)
+            proc = subprocess.Popen(["Python\\The-Bad-Guys\\BadExclusion.bat"], stdout=subprocess.PIPE, shell=True)
             (res,err) = proc.communicate()
             proc = err
             if proc == 1:
@@ -233,7 +233,7 @@ def BrokenWall():
             Info_Style()
             print("Checking the firewall status...")
             time.sleep(7)
-            proc1 = subprocess.Popen(["The-Good-Guys\\WallStatus.bat"], stdout=subprocess.PIPE, shell=True)
+            proc1 = subprocess.Popen(["Python\\The-Good-Guys\\WallStatus.bat"], stdout=subprocess.PIPE, shell=True)
             (result,err) = proc1.communicate()
             result = str(result)
             if result.count("On") == 3:
@@ -244,7 +244,7 @@ def BrokenWall():
                 Info_Style()
                 print("Now trying to add an exclusion to your firewall...")
                 time.sleep(7)
-                proc = subprocess.Popen(["The-Bad-Guys\\BadExclusion.bat"], stdout=subprocess.PIPE, shell=True)
+                proc = subprocess.Popen(["Python\\The-Bad-Guys\\BadExclusion.bat"], stdout=subprocess.PIPE, shell=True)
                 (res,err) = proc.communicate()
                 proc = err
                 if proc == 1:
@@ -298,7 +298,7 @@ def BrokenWall():
                 print("And it was able to turn off 1/3 parts of your firewall")
                 Info_Style()
                 print("Now trying to add an exclusion to your firewall...")
-                proc = subprocess.Popen(["The-Bad-Guys\\BadExclusion.bat"], stdout=subprocess.PIPE, shell=True)
+                proc = subprocess.Popen(["Python\\The-Bad-Guys\\BadExclusion.bat"], stdout=subprocess.PIPE, shell=True)
                 (res,err) = proc.communicate()
                 proc = err
                 time.sleep(7)
@@ -353,7 +353,7 @@ def BrokenWall():
                 print("And it was able to turn off 2/3 parts of your firewall")
                 Info_Style()
                 print("Now trying to add an exclusion to your firewall...")
-                proc = subprocess.Popen(["The-Bad-Guys\\BadExclusion.bat"], stdout=subprocess.PIPE, shell=True)
+                proc = subprocess.Popen(["Python\\The-Bad-Guys\\BadExclusion.bat"], stdout=subprocess.PIPE, shell=True)
                 (res,err) = proc.communicate()
                 proc = err
                 time.sleep(7)
@@ -408,7 +408,7 @@ def BrokenWall():
                 print("And it was able to turn off your whole firewall")
                 Info_Style()
                 print("Now trying to add an exclusion to your firewall...")
-                proc = subprocess.Popen(["The-Bad-Guys\\BadExclusion.bat"], stdout=subprocess.PIPE, shell=True)
+                proc = subprocess.Popen(["Python\\The-Bad-Guys\\BadExclusion.bat"], stdout=subprocess.PIPE, shell=True)
                 (res,err) = proc.communicate()
                 proc = err
                 time.sleep(7)
@@ -468,11 +468,11 @@ def Roll_back():
     Great_Style()
     print("Enabling windows firewall back on...")
     time.sleep(3)
-    subprocess.check_output("start The-Good-Guys\\FirewallBack.bat",shell=True)
+    subprocess.check_output("start Python\\The-Good-Guys\\FirewallBack.bat",shell=True)
     Great_Style()
     print("Removing the backdoor from exclusions...")
     time.sleep(3)
-    subprocess.check_output("start The-Good-Guys\\NoBackdoor.bat",shell=True)
+    subprocess.check_output("start Python\\The-Good-Guys\\NoBackdoor.bat",shell=True)
     Info_Style()
     print("Roll Back completed!")
     Info_Style()
@@ -492,7 +492,7 @@ def main_menu():
 ╚═╝░░░░░╚═╝░░╚═╝░╚════╝░░░░╚═╝░░░╚══════╝╚═════╝░░░░╚═╝░░░""")
     print(colorama.Fore.GREEN + "- Test your system's protection like a pro! ")
     print(colorama.Fore.MAGENTA + "\n1- Test Ransomware Protection\n ")
-    print(colorama.Fore.MAGENTA + "2- Test Firewall Protection\n")
+    print(colorama.Fore.MAGENTA + "2- Test Firewall Protection | Just windows firewall\n")
     print(colorama.Fore.MAGENTA + "3- Roll back firewall test changes")
     print(colorama.Fore.MAGENTA + "\n4- Exit")
     print(colorama.Fore.GREEN + "\nBy @TheCcortex - MIT license")
