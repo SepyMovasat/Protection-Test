@@ -3,7 +3,6 @@
 # Please note: Although that this is for testing purposes, It may create critical problems or file loss#
 # SO PLEASE USE THIS PYTHON SCRIPT WITH A LOT OF CARE #
 # JUST FOR WINDOWS #
-# NOT RESPONSIBLE FOR ANY DAMAGE #
 
 import colorama
 import subprocess
