@@ -97,11 +97,23 @@ def Ransom(mode):
         Info_Style()
         print("Starting the ransomware test...")
         time.sleep(6)
-        finalf = "//The-Bad-Guys//"+file 
-        if mode == "E":
-            letssee = subprocess.call(finalf)
-        else:
-            letssee = subprocess.call([sys.executable, finalf])
+        try:
+            finalf = "The-Bad-Guys//"+file 
+            if mode == "E":
+                letssee = subprocess.call(finalf)
+            else:
+                letssee = subprocess.call([sys.executable, finalf])
+        except FileNotFoundError:
+            Warning_Style()
+            print("The ransomware file was not found!")
+            Great_Style()
+            print("This maybe caused by your anti-virus software")
+            Info_Style()
+            print("If that's true, your anti-virus has done great(probably with signatures)!")
+            Info_Style()
+            print("Going back to the main menu in 12 seconds...")
+            time.sleep(12)
+            main_menu()
         if letssee == 1 or letssee == 2:
             cls()
             print(colorama.Fore.MAGENTA + """
@@ -179,7 +191,16 @@ def Ransom(mode):
                             time.sleep(15)
                             main_menu()
     except PermissionError:
-        pass
+            Warning_Style()
+            print("The ransomware file can not be executed!")
+            Great_Style()
+            print("This maybe caused by your anti-virus")
+            Info_Style()
+            print("If that's true, your anti-virus has done great(probably with signatures)!")
+            Info_Style()
+            print("Going back to the main menu in 12 seconds...")
+            time.sleep(12)
+            main_menu()
 
 
 def BrokenWall(mode):
