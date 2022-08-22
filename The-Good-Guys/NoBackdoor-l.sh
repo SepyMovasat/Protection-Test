@@ -1,0 +1,1 @@
+sudo ufw deny OpenSSH

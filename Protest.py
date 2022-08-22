@@ -10,13 +10,14 @@ import time #Used for time.sleep
 import os #Used in different parts of the program 
 import ctypes #Used in is_admin()
 
-
+    
 def is_admin():
     #Some parts of the program need admin privileges to work properly
     try:
-        return ctypes.windll.shell32.IsUserAnAdmin()
-    except:
-        return False
+        is_admin = (os.getuid() == 0)
+    except AttributeError:
+        is_admin = ctypes.windll.shell32.IsUserAnAdmin() != 0
+    return is_admin
 
 
 def cls():
@@ -58,7 +59,7 @@ def tell_the_danger():
     Info_Style()
     print("For doing that, we try to encrypt all data in the documents folder")
     Great_Style()
-    print("For being safe from this, copy your files in any other folder!")
+    print("For being safe from this, copy your files in any other folder(but the folder must have at least a file in it)!")
     Warning_Style()
     CARE = input("Do you accept the potential"+colorama.Fore.RED + " danger"+colorama.Fore.RESET +" ["+colorama.Fore.CYAN + "Y"+colorama.Fore.RESET + "/" + colorama.Fore.YELLOW + "N"+colorama.Fore.RESET + "] ")
     if CARE == "Y":

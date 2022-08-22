@@ -1,0 +1,2 @@
+colorama==0.4.5
+cryptography==37.0.4
