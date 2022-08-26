@@ -20,7 +20,8 @@
 ![image](https://user-images.githubusercontent.com/81220038/185045770-2e8395d8-ac8b-4a7b-9f8e-057d9734477d.png)
 
 ### What are you waiting for?
-* Go to the releases part, download the zip and run Protest.py!
+* Go to the releases part, download the zip and run pip install -r requirements.txt!
+* Then run the app!
 
 ### Don't know how it works?
 * Go to the wiki section and get started!
