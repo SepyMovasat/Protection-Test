@@ -2,8 +2,12 @@
 # IMPORTANT: JUST USE THIS FOR TESTING ANTI-VIRUS SOFTWARE """ONLY""" #
 # Please note: Although that this is for testing purposes, It may cause file loss#
 # JUST FOR WINDOWS #
+# Created by @TheCcortex | Under MIT License #
+# IMPORTANT: JUST USE THIS FOR TESTING ANTI-VIRUS SOFTWARE """ONLY""" #
+# Please note: Although that this is for testing purposes, It may cause file loss#
+# JUST FOR WINDOWS #
 
-import colorama #Used for creating some sort of UI
+import colorama as cm #Used for creating some sort of UI
 import subprocess #Used for executing files a lot
 import sys #Used like subprocess
 import time #Used for time.sleep
@@ -29,27 +33,27 @@ def cls():
 
 #In a good UI, anything has it's own style :)
 def Great_Style():
-    print(colorama.Fore.RESET +"[" + colorama.Fore.GREEN + "+" + colorama.Fore.RESET + "] ", end="")
+    print(cm.Fore.CYAN +"[" + cm.Fore.GREEN + "+" + cm.Fore.CYAN + "] " + cm.Fore.RESET, end="")
 
 
 def Error_Style():
-    print(colorama.Fore.RESET +"[" + colorama.Fore.RED + "!" + colorama.Fore.RESET + "] ", end="")
+    print(cm.Fore.YELLOW +"[" + cm.Fore.RED + "!" + cm.Fore.YELLOW + "] " + cm.Fore.RESET, end="")
 
 
 def Info_Style():
-    print(colorama.Fore.RESET +"[" + colorama.Fore.BLUE + "i" + colorama.Fore.RESET + "] ", end="")
+    print(cm.Fore.CYAN +"[" + cm.Fore.BLUE + "i" + cm.Fore.CYAN + "] " + cm.Fore.RESET, end="")
 
 
 def Warning_Style():
-    print(colorama.Fore.RESET +"[" + colorama.Fore.YELLOW + "!" + colorama.Fore.RESET + "] ", end="")
+    print(cm.Fore.RED +"[" + cm.Fore.YELLOW + "!" + cm.Fore.RED + "] " + cm.Fore.RESET, end="")
 
 
 def No_Worry_Style():
-    print(colorama.Fore.RESET +"[" + colorama.Fore.GREEN + "OK" + colorama.Fore.RESET + "] ", end="")
+    print(cm.Fore.CYAN +"[" + cm.Fore.GREEN + "OK" + cm.Fore.CYAN + "] " + cm.Fore.RESET, end="")
 
 
 def Ask_Style():
-    print(colorama.Fore.RESET +"[" + colorama.Fore.BLUE + "???" + colorama.Fore.RESET + "] ", end="")
+    print(cm.Fore.RESET +"[" + cm.Fore.BLUE + "???" + cm.Fore.RESET + "] ", end="")
 
 
 def tell_the_danger():
@@ -61,12 +65,12 @@ def tell_the_danger():
     Great_Style()
     print("For being safe from this, copy your files in any other folder(but the folder must have at least a file in it)!")
     Warning_Style()
-    CARE = input("Do you accept the potential"+colorama.Fore.RED + " danger"+colorama.Fore.RESET +" ["+colorama.Fore.CYAN + "Y"+colorama.Fore.RESET + "/" + colorama.Fore.YELLOW + "N"+colorama.Fore.RESET + "] ")
+    CARE = input("Do you accept the potential"+cm.Fore.RED + " danger"+cm.Fore.RESET +" ["+cm.Fore.CYAN + "Y"+cm.Fore.RESET + "/" + cm.Fore.YELLOW + "N"+cm.Fore.RESET + "] ")
     if CARE == "Y":
         cls()
         Info_Style()
         print("This test has two modes [easy mode, hard mode]")
-        rmode = input("Please choose the mode you want to use ["+colorama.Fore.CYAN + "E"+colorama.Fore.RESET +"/" + colorama.Fore.YELLOW + "H"+colorama.Fore.RESET + "] ")
+        rmode = input("Please choose the mode you want to use ["+cm.Fore.CYAN + "E"+cm.Fore.RESET +"/" + cm.Fore.YELLOW + "H"+cm.Fore.RESET + "] ")
         if rmode == "E":
             Ransom("E")
         elif rmode == "e":
@@ -91,7 +95,7 @@ def Ransom(mode):
             file = "Encrypt.py"
         usr = os.getlogin()
         cls()
-        print(colorama.Fore.GREEN + """
+        print(cm.Fore.GREEN + """
 █▀ ▀█▀ ▄▀█ █▀█ ▀█▀ █ █▄░█ █▀▀ 
 ▄█ ░█░ █▀█ █▀▄ ░█░ █ █░▀█ █▄█ ▄ ▄ ▄
     """)
@@ -101,7 +105,8 @@ def Ransom(mode):
         try:
             finalf = "The-Bad-Guys//"+file 
             if mode == "E":
-                letssee = subprocess.call(finalf)
+                letssee = subprocess.call(["python",finalf])
+
             else:
                 letssee = subprocess.call([sys.executable, finalf])
         except FileNotFoundError:
@@ -117,7 +122,7 @@ def Ransom(mode):
             main_menu()
         if letssee == 1 or letssee == 2:
             cls()
-            print(colorama.Fore.MAGENTA + """
+            print(cm.Fore.MAGENTA + """
 ██╗░░░██╗███████╗░█████╗░██╗
 ██║░░░██║██╔════╝██╔══██╗██║
 ██║░░░██║█████╗░░██║░░██║██║
@@ -149,7 +154,7 @@ def Ransom(mode):
                     if not "desktop.ini" in lfile:
                         if lfile.endswith(".WOW"):
                             cls()
-                            print(colorama.Fore.RED + """
+                            print(cm.Fore.RED + """
 ░█████╗░██╗░░░██╗░█████╗░██╗░░██╗██╗
 ██╔══██╗██║░░░██║██╔══██╗██║░░██║██║
 ██║░░██║██║░░░██║██║░░╚═╝███████║██║
@@ -171,7 +176,7 @@ def Ransom(mode):
                             main_menu()
                         else:
                             cls()
-                            print(colorama.Fore.GREEN + """
+                            print(cm.Fore.GREEN + """
 ░██████╗░██████╗░███████╗░█████╗░████████╗██╗
 ██╔════╝░██╔══██╗██╔════╝██╔══██╗╚══██╔══╝██║
 ██║░░██╗░██████╔╝█████╗░░███████║░░░██║░░░██║
@@ -193,7 +198,7 @@ def Ransom(mode):
                             main_menu()
     except PermissionError:
             Warning_Style()
-            print("The ransomware file can not be executed!")
+            print("The ransomware file can not execute!")
             Great_Style()
             print("This maybe caused by your anti-virus")
             Info_Style()
@@ -214,7 +219,7 @@ def BrokenWall(mode):
             file1 = "BrokenWall.bat"
             file2 = "BadExclusion.bat"
         cls()
-        print(colorama.Fore.GREEN + """
+        print(cm.Fore.GREEN + """
 █▀ ▀█▀ ▄▀█ █▀█ ▀█▀ █ █▄░█ █▀▀
 ▄█ ░█░ █▀█ █▀▄ ░█░ █ █░▀█ █▄█ ▄ ▄ ▄
     """)
@@ -239,7 +244,7 @@ def BrokenWall(mode):
             proc = err
             if proc == 1 or proc == 2:
                 cls()
-                print(colorama.Fore.MAGENTA + """
+                print(cm.Fore.MAGENTA + """
 ██╗░░░██╗███████╗░█████╗░██╗
 ██║░░░██║██╔════╝██╔══██╗██║
 ██║░░░██║█████╗░░██║░░██║██║
@@ -260,7 +265,7 @@ def BrokenWall(mode):
                 main_menu()
             else:
                 cls()
-                print(colorama.Fore.GREEN + """
+                print(cm.Fore.GREEN + """
 ░██████╗░░█████╗░░█████╗░██████╗░██╗
 ██╔════╝░██╔══██╗██╔══██╗██╔══██╗██║
 ██║░░██╗░██║░░██║██║░░██║██║░░██║██║
@@ -322,7 +327,7 @@ def BrokenWall(mode):
                     main_menu()
                 else:
                     cls()
-                    print(colorama.Fore.GREEN + """
+                    print(cm.Fore.GREEN + """
 ░██████╗░░█████╗░░█████╗░██████╗░██╗
 ██╔════╝░██╔══██╗██╔══██╗██╔══██╗██║
 ██║░░██╗░██║░░██║██║░░██║██║░░██║██║
@@ -355,7 +360,7 @@ def BrokenWall(mode):
                 time.sleep(7)
                 if proc == 1 or proc == 2:
                     cls()
-                    print(colorama.Fore.GREEN + """
+                    print(cm.Fore.GREEN + """
 ░██████╗░░█████╗░░█████╗░██████╗░██╗
 ██╔════╝░██╔══██╗██╔══██╗██╔══██╗██║
 ██║░░██╗░██║░░██║██║░░██║██║░░██║██║
@@ -377,7 +382,7 @@ def BrokenWall(mode):
                     main_menu()
                 else:
                     cls()
-                    print(colorama.Fore.YELLOW + """
+                    print(cm.Fore.YELLOW + """
 ███╗░░██╗░█████╗░████████╗  ██████╗░░█████╗░██████╗░██╗
 ████╗░██║██╔══██╗╚══██╔══╝  ██╔══██╗██╔══██╗██╔══██╗██║
 ██╔██╗██║██║░░██║░░░██║░░░  ██████╦╝███████║██║░░██║██║
@@ -410,7 +415,7 @@ def BrokenWall(mode):
                 time.sleep(7)
                 if proc == 1 or proc == 2:
                     cls()
-                    print(colorama.Fore.RED + """
+                    print(cm.Fore.RED + """
 ██████╗░░█████╗░██████╗░██╗
 ██╔══██╗██╔══██╗██╔══██╗██║
 ██████╦╝███████║██║░░██║██║
@@ -432,7 +437,7 @@ def BrokenWall(mode):
                     main_menu()
                 else:
                     cls()
-                    print(colorama.Fore.RED + """
+                    print(cm.Fore.RED + """
 ░██████╗░█████╗░  ██████╗░░█████╗░██████╗░██╗
 ██╔════╝██╔══██╗  ██╔══██╗██╔══██╗██╔══██╗██║
 ╚█████╗░██║░░██║  ██████╦╝███████║██║░░██║██║
@@ -465,7 +470,7 @@ def BrokenWall(mode):
                 time.sleep(7)
                 if proc == 1 or proc == 2:
                     cls()
-                    print(colorama.Fore.RED + """
+                    print(cm.Fore.RED + """
 ░██████╗░█████╗░  ██████╗░░█████╗░██████╗░██╗
 ██╔════╝██╔══██╗  ██╔══██╗██╔══██╗██╔══██╗██║
 ╚█████╗░██║░░██║  ██████╦╝███████║██║░░██║██║
@@ -487,7 +492,7 @@ def BrokenWall(mode):
                     main_menu()
                 else:
                     cls()
-                    print(colorama.Fore.MAGENTA + """
+                    print(cm.Fore.MAGENTA + """
 ██╗░░██╗░█████╗░██████╗░██████╗░██╗██████╗░██╗░░░░░███████╗██╗
 ██║░░██║██╔══██╗██╔══██╗██╔══██╗██║██╔══██╗██║░░░░░██╔════╝██║
 ███████║██║░░██║██████╔╝██████╔╝██║██████╦╝██║░░░░░█████╗░░██║
@@ -515,20 +520,18 @@ def Roll_back():
     # Roll back firewall test changes :)
     try:
         cls()
-        print(colorama.Fore.GREEN + """
+        print(cm.Fore.GREEN + """
 █▀█ █▀█ █░░ █░░ █ █▄░█ █▀▀   █▄▄ ▄▀█ █▀▀ █▄▀
 █▀▄ █▄█ █▄▄ █▄▄ █ █░▀█ █▄█   █▄█ █▀█ █▄▄ █░█ ▄ ▄ ▄
 """)
         Great_Style()
         print("Enabling windows firewall back on...")
         time.sleep(3)
-        subprocess.check_output(
-            "start The-Good-Guys\\FirewallBack.bat", shell=True)
+        subprocess.check_output("start The-Good-Guys\\FirewallBack.bat", shell=True)
         Great_Style()
         print("Removing the backdoor from exclusions...")
         time.sleep(3)
-        subprocess.check_output(
-            "start The-Good-Guys\\NoBackdoor.bat", shell=True)
+        subprocess.check_output("start The-Good-Guys\\NoBackdoor.bat", shell=True)
         Info_Style()
         print("Roll Back completed!")
         Info_Style()
@@ -558,7 +561,7 @@ def TellTheFalseDanger():
         FalseButPositive()
     elif lol == "N" or lol == "n":
         cls()
-        print(colorama.Fore.GREEN + """
+        print(cm.Fore.GREEN + """
 ██╗░░░░░░█████╗░██╗░░░░░  ██╗██╗░░
 ██║░░░░░██╔══██╗██║░░░░░  ╚═╝╚██╗░
 ██║░░░░░██║░░██║██║░░░░░  ░░░░╚██╗
@@ -584,7 +587,7 @@ def TellTheFalseDanger():
 def FalseButPositive():
     # False positive virus test :)
     cls()
-    print(colorama.Fore.GREEN + """
+    print(cm.Fore.GREEN + """
 █▀ ▀█▀ ▄▀█ █▀█ ▀█▀ █ █▄░█ █▀▀
 ▄█ ░█░ █▀█ █▀▄ ░█░ █ █░▀█ █▄█ ▄ ▄ ▄
     """)
@@ -594,8 +597,8 @@ def FalseButPositive():
     print("You may see some pop-ups open, don't forget close all of them, else we can not continue the test!")
     time.sleep(7)
     blocked = 0
-    for file in os.listdir("The-False-Guys"):
-        ran = subprocess.Popen("start The-False-Guys\\"+file+"",stdout=subprocess.PIPE ,shell=True)
+    for file in os.listdir("..\\The-False-Guys"):
+        ran = subprocess.Popen("start ..\\The-False-Guys\\"+file+"",stdout=subprocess.PIPE ,shell=True)
         (out, err) = ran.communicate()
         if err == 1 or err == 2:
             blocked+=1
@@ -603,7 +606,7 @@ def FalseButPositive():
             pass
     if blocked <= 1:
         cls()
-        print(colorama.Fore.MAGENTA + """
+        print(cm.Fore.MAGENTA + """
 ██╗░░░██╗███████╗░█████╗░██╗
 ██║░░░██║██╔════╝██╔══██╗██║
 ██║░░░██║█████╗░░██║░░██║██║
@@ -621,7 +624,7 @@ def FalseButPositive():
         main_menu()
     elif blocked <= 3:
         cls()
-        print(colorama.Fore.GREEN + """
+        print(cm.Fore.GREEN + """
 ░██████╗░██████╗░███████╗░█████╗░████████╗██╗
 ██╔════╝░██╔══██╗██╔════╝██╔══██╗╚══██╔══╝██║
 ██║░░██╗░██████╔╝█████╗░░███████║░░░██║░░░██║
@@ -638,7 +641,7 @@ def FalseButPositive():
         time.sleep(12)
     elif blocked <= 5:
         cls()
-        print(colorama.Fore.YELLOW + """
+        print(cm.Fore.YELLOW + """
 ███╗░░██╗░█████╗░████████╗  ██████╗░░█████╗░██████╗░██╗
 ████╗░██║██╔══██╗╚══██╔══╝  ██╔══██╗██╔══██╗██╔══██╗██║
 ██╔██╗██║██║░░██║░░░██║░░░  ██████╦╝███████║██║░░██║██║
@@ -655,7 +658,7 @@ def FalseButPositive():
         time.sleep(12)
     elif blocked <= 7:
         cls()
-        print(colorama.Fore.RED + """
+        print(cm.Fore.RED + """
 ██████╗░░█████╗░██████╗░██╗
 ██╔══██╗██╔══██╗██╔══██╗██║
 ██████╦╝███████║██║░░██║██║
@@ -672,7 +675,7 @@ def FalseButPositive():
         time.sleep(12)
     elif blocked <= 8:
         cls()
-        print(colorama.Fore.RED + """
+        print(cm.Fore.RED + """
 ██╗░░██╗░█████╗░██████╗░██████╗░██╗██████╗░██╗░░░░░███████╗██╗
 ██║░░██║██╔══██╗██╔══██╗██╔══██╗██║██╔══██╗██║░░░░░██╔════╝██║
 ███████║██║░░██║██████╔╝██████╔╝██║██████╦╝██║░░░░░█████╗░░██║
@@ -689,29 +692,177 @@ def FalseButPositive():
         time.sleep(12)
         main_menu()
 
+def Spyware_test(): # Here we test if your anti-virus can block us from accessing your camera and microphone!
+    try:
+        file1="Spycam.py"
+        file2="Spymic.py"
+        cls()
+        print(cm.Fore.GREEN + """
+█▀ ▀█▀ ▄▀█ █▀█ ▀█▀ █ █▄░█ █▀▀
+▄█ ░█░ █▀█ █▀▄ ░█░ █ █░▀█ █▄█ ▄ ▄ ▄
+""")
+        Info_Style()
+        print("Trying to access your camera to take a picture...")
+        time.sleep(4)
+        try:
+            finalf = "The-Bad-Guys//"+file1 
+            finalf2 = "The-Bad-Guys//"+file2
+            letssee = subprocess.call(["python", finalf])
+        except FileNotFoundError:
+            Warning_Style()
+            print("The spyware file was not found!")
+            Great_Style()
+            print("This maybe caused by your anti-virus software")
+            Info_Style()
+            print("If that's true, your anti-virus has done great(probably with signatures)!")
+            Info_Style()
+            print("Going back to the main menu in 12 seconds...")
+            time.sleep(12)
+            main_menu()
+        if os.path.isfile("The-Bad-Guys//Oh-Spy.png"):
+            spy1 = True
+            Warning_Style()
+            print("Spyware was able to take a picture from you!")
+            os.remove("The-Bad-Guys//Oh-Spy.png")
+            Info_Style()
+            print("Trying to access your microphone to record a voice...")
+            time.sleep(3)
+        else:
+            spy1 = False
+            Great_Style()
+            print("The spyware seems to be blocked to take a picture from you!")
+            Info_Style()
+            print("Trying to access your microphone to record a voice...")
+            time.sleep(3)
+        try:
+            letssee = subprocess.call(["python", finalf2])
+        except FileNotFoundError:
+            Warning_Style()
+            print("The spyware file was not found!")
+            Great_Style()
+            print("This maybe caused by your anti-virus software")
+            Info_Style()
+            print("If that's true, your anti-virus has done great(probably with signatures)!")
+            Info_Style()
+            print("Going back to the main menu in 12 seconds...")
+            time.sleep(12)
+            main_menu()   
+        if os.path.isfile("The-Bad-Guys//Oh-Spy.wav"):
+            os.remove("The-Bad-Guys//Oh-Spy.wav")
+            spy2 = True
+        else:
+            spy2 = False
+
+        if spy1 == True and spy2 == True:
+            cls()
+            print(cm.Fore.MAGENTA + """
+██╗░░██╗░█████╗░██████╗░██████╗░██╗██████╗░██╗░░░░░███████╗██╗
+██║░░██║██╔══██╗██╔══██╗██╔══██╗██║██╔══██╗██║░░░░░██╔════╝██║
+███████║██║░░██║██████╔╝██████╔╝██║██████╦╝██║░░░░░█████╗░░██║
+██╔══██║██║░░██║██╔══██╗██╔══██╗██║██╔══██╗██║░░░░░██╔══╝░░╚═╝
+██║░░██║╚█████╔╝██║░░██║██║░░██║██║██████╦╝███████╗███████╗██╗
+╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝╚═╝░░╚═╝╚═╝╚═════╝░╚══════╝╚══════╝╚═╝
+""")
+            Error_Style()
+            print("The spyware was able to take a picture and record an audio from you!")
+            Info_Style()
+            print("You must never relay on your anti-virus's spyware protection(or camera/microphone shield)! 0%")
+            Info_Style()
+            print("Going back to main menu in 12 seconds...")
+            time.sleep(12)
+            main_menu()
+        elif spy1 == True and spy2 == False:
+            cls()
+            print(cm.Fore.YELLOW + """
+███╗░░░███╗███████╗██████╗░██╗██╗░░░██╗███╗░░░███╗
+████╗░████║██╔════╝██╔══██╗██║██║░░░██║████╗░████║
+██╔████╔██║█████╗░░██║░░██║██║██║░░░██║██╔████╔██║
+██║╚██╔╝██║██╔══╝░░██║░░██║██║██║░░░██║██║╚██╔╝██║
+██║░╚═╝░██║███████╗██████╔╝██║╚██████╔╝██║░╚═╝░██║
+╚═╝░░░░░╚═╝╚══════╝╚═════╝░╚═╝░╚═════╝░╚═╝░░░░░╚═╝
+""")
+            Great_Style()
+            print("The spyware was able to take a picture but it was unable to record your voice!")
+            Info_Style()
+            print("You can almost relay on your anti-virus's spyware protection(or camera/microphone shield)! 50%")
+            Info_Style()
+            print("Going back to main menu in 12 seconds...")
+            time.sleep(12)
+            main_menu()
+        elif spy1 == False and spy2 == True:
+            cls()
+            print(cm.Fore.YELLOW + """
+███╗░░░███╗███████╗██████╗░██╗██╗░░░██╗███╗░░░███╗
+████╗░████║██╔════╝██╔══██╗██║██║░░░██║████╗░████║
+██╔████╔██║█████╗░░██║░░██║██║██║░░░██║██╔████╔██║
+██║╚██╔╝██║██╔══╝░░██║░░██║██║██║░░░██║██║╚██╔╝██║
+██║░╚═╝░██║███████╗██████╔╝██║╚██████╔╝██║░╚═╝░██║
+╚═╝░░░░░╚═╝╚══════╝╚═════╝░╚═╝░╚═════╝░╚═╝░░░░░╚═╝
+""")
+            Great_Style()
+            print("The spyware was unable to take a picture but it was able to record your voice!")
+            Info_Style()
+            print("You can almost relay on your anti-virus's spyware protection(or camera/microphone shield)! 50%")
+            Info_Style()
+            print("Going back to main menu in 12 seconds...")
+            time.sleep(12)
+            main_menu()
+        elif spy1 == False and spy2 == False:
+            cls()
+            print(cm.Fore.GREEN + """
+░██████╗░██████╗░███████╗░█████╗░████████╗██╗
+██╔════╝░██╔══██╗██╔════╝██╔══██╗╚══██╔══╝██║
+██║░░██╗░██████╔╝█████╗░░███████║░░░██║░░░██║
+██║░░╚██╗██╔══██╗██╔══╝░░██╔══██║░░░██║░░░╚═╝
+╚██████╔╝██║░░██║███████╗██║░░██║░░░██║░░░██╗
+░╚═════╝░╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝░░░╚═╝░░░╚═╝
+""")
+            Great_Style()
+            print("The spyware was unable to take a picture or record a voice!")
+            Info_Style()
+            print("You can always relay on your anti-virus's spyware protection(or camera/microphone shield)! 100%")
+            Info_Style()
+            print("Going back to main menu in 12 seconds...")
+            time.sleep(12)
+            main_menu()
+
+    except PermissionError:
+        Warning_Style()
+        print("The spyware file can not execute!")
+        Great_Style()
+        print("This maybe caused by your anti-virus")
+        Info_Style()
+        print("If that's true, your anti-virus has done great(probably with signatures)!")
+        Info_Style()
+        print("Going back to the main menu in 12 seconds...")
+        time.sleep(12)
+        main_menu()
+
+
 def main_menu():
     cls()
-    print(colorama.Fore.CYAN + """   
+    print(cm.Fore.CYAN + """   
 ██████╗░██████╗░░█████╗░████████╗███████╗░██████╗████████╗
 ██╔══██╗██╔══██╗██╔══██╗╚══██╔══╝██╔════╝██╔════╝╚══██╔══╝
 ██████╔╝██████╔╝██║░░██║░░░██║░░░█████╗░░╚█████╗░░░░██║░░░
 ██╔═══╝░██╔══██╗██║░░██║░░░██║░░░██╔══╝░░░╚═══██╗░░░██║░░░
 ██║░░░░░██║░░██║╚█████╔╝░░░██║░░░███████╗██████╔╝░░░██║░░░
 ╚═╝░░░░░╚═╝░░╚═╝░╚════╝░░░░╚═╝░░░╚══════╝╚═════╝░░░░╚═╝░░░""")
-    print(colorama.Fore.GREEN + "- Test your system's protection like a pro! ")
-    print(colorama.Fore.MAGENTA + "\n1- Test Ransomware Protection\n ")
-    print(colorama.Fore.MAGENTA +"2- Test Firewall Protection | Just windows firewall\n")
-    print(colorama.Fore.MAGENTA + "3- Roll back firewall test changes")
-    print(colorama.Fore.MAGENTA + "\n4- False Positive Test")
-    print(colorama.Fore.MAGENTA + "\n5- Exit")
-    print(colorama.Fore.GREEN + "\nBy @TheCcortex - MIT license")
-    main_inp = input(colorama.Fore.RESET + "Which one? ")
+    print(cm.Fore.GREEN + "- Test your system's protection like a pro! ")
+    print(cm.Fore.MAGENTA + "\n1- Test Ransomware Protection\n ")
+    print(cm.Fore.MAGENTA +"2- Test Firewall Protection | Just windows firewall\n")
+    print(cm.Fore.MAGENTA + "3- Roll back firewall test changes")
+    print(cm.Fore.MAGENTA + "\n4- False Positive Test")
+    print(cm.Fore.MAGENTA + "\n5- Spyware Test(camera and microphone)")
+    print(cm.Fore.MAGENTA + "\n6- Exit")
+    print(cm.Fore.GREEN + "\nBy @TheCcortex - MIT license")
+    main_inp = input(cm.Fore.RESET + "Which one? ")
     if main_inp == "1":
         tell_the_danger()
     elif main_inp == "2":
         Info_Style()
         print("This test had two modes: [easy mode, hard mode]")
-        eorh =input("Please choose the mode you want to use ["+colorama.Fore.CYAN + "E"+colorama.Fore.RESET +"/" + colorama.Fore.YELLOW + "H"+colorama.Fore.RESET + "] ")
+        eorh =input("Please choose the mode you want to use ["+cm.Fore.CYAN + "E"+cm.Fore.RESET +"/" + cm.Fore.YELLOW + "H"+cm.Fore.RESET + "] ")
         if eorh == "E" or eorh == "e":
             BrokenWall("E")
         else:
@@ -721,8 +872,10 @@ def main_menu():
     elif main_inp == "4":
         TellTheFalseDanger()
     elif main_inp == "5":
+        Spyware_test()
+    elif main_inp == "6":
         cls()
-        print(colorama.Fore.GREEN + """
+        print(cm.Fore.GREEN + """
 ░██████╗███████╗███████╗  ██╗░░░██╗░█████╗░██╗░░░██╗██╗
 ██╔════╝██╔════╝██╔════╝  ╚██╗░██╔╝██╔══██╗██║░░░██║██║
 ╚█████╗░█████╗░░█████╗░░  ░╚████╔╝░██║░░██║██║░░░██║██║
@@ -730,12 +883,12 @@ def main_menu():
 ██████╔╝███████╗███████╗  ░░░██║░░░╚█████╔╝╚██████╔╝██╗
 ╚═════╝░╚══════╝╚══════╝  ░░░╚═╝░░░░╚════╝░░╚═════╝░╚═╝
 """)
-        print(colorama.Fore.RESET + "Exiting in 4 seconds...")
+        print(cm.Fore.RESET + "Exiting in 4 seconds...")
         time.sleep(4)
         exit()
     else:
         cls()
-        print("""
+        print(cm.Fore.RED + """
 ░██╗░░░░░░░██╗██╗░░██╗░█████╗░████████╗░█████╗░░█████╗░
 ░██║░░██╗░░██║██║░░██║██╔══██╗╚══██╔══╝██╔══██╗██╔══██╗
 ░╚██╗████╗██╔╝███████║███████║░░░██║░░░╚═╝███╔╝╚═╝███╔╝
@@ -755,7 +908,17 @@ def main_menu():
 
 if __name__ == "__main__":
     if is_admin():
-        main_menu()
+        if sys.platform == "win32":
+            main_menu()
+        else:
+            Warning_Style()
+            print("This is the windows version of the program")
+            Info_Style()
+            print("But you are using Linux/Mac")
+            Info_style()
+            print("Exiting...")
+            time.sleep(4)
+            exit()
     else:
         Error_Style()
         print("To run this python file, you need to run it as administrator")
