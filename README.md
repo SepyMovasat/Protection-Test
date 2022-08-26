@@ -9,7 +9,8 @@
 ### Why to use protest(protection-test)?
 * To make sure you are safe from zero-day malware. Cause zero-day malware is not in the signatures of your anti-virus software. So, the only way to block a zero-day malware is to have a great behavioral protection that stops malcious activities.
 * To test your firwall protection
-* **NEW:** False positives test
+* False positives test
+* **NEW:** Spyware test!
 * **NEW:** Protest for Linux!
 * Easy to use 
 * Multiple options
