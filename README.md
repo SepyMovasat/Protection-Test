@@ -29,6 +29,6 @@
 
 ### Wanna support us?
 * Just hit that star button
-* If you found any bug, create an issue in the issues page!
+* If you found any bug, create an issue on the issues page!
 
 ## New Amazing Updates Coming...
