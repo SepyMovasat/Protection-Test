@@ -17,7 +17,7 @@
 * Open source 
 * Safe test environment
 
-![image](https://user-images.githubusercontent.com/81220038/185045770-2e8395d8-ac8b-4a7b-9f8e-057d9734477d.png)
+![image](https://user-images.githubusercontent.com/108173887/186955885-197815fa-48af-4f7e-8c25-29ba92ad011a.png)
 
 ### What are you waiting for?
 * Go to the releases part, download the zip and run pip install -r requirements.txt!
