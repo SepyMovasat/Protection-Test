@@ -549,7 +549,7 @@ def Roll_back():
 
 def TellTheFalseDanger():
     # Telling the false danger to the user :) And as well having some fun!
-    Warning_Style()
+    Info_Style()
     print("There is no danger in this test!")
     Info_Style()
     print("By the way, you may encounter some 'false dangers' like this:")
@@ -597,8 +597,8 @@ def FalseButPositive():
     print("You may see some pop-ups open, don't forget close all of them, else we can not continue the test!")
     time.sleep(7)
     blocked = 0
-    for file in os.listdir("..\\The-False-Guys"):
-        ran = subprocess.Popen("start ..\\The-False-Guys\\"+file+"",stdout=subprocess.PIPE ,shell=True)
+    for file in os.listdir("The-False-Guys"):
+        ran = subprocess.Popen("start The-False-Guys\\"+file+"",stdout=subprocess.PIPE ,shell=True)
         (out, err) = ran.communicate()
         if err == 1 or err == 2:
             blocked+=1
