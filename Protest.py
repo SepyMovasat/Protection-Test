@@ -1,10 +1,6 @@
 # Created by @TheCcortex | Under MIT License #
 # IMPORTANT: JUST USE THIS FOR TESTING ANTI-VIRUS SOFTWARE """ONLY""" #
-# Please note: Although that this is for testing purposes, It may cause file loss#
-# JUST FOR WINDOWS #
-# Created by @TheCcortex | Under MIT License #
-# IMPORTANT: JUST USE THIS FOR TESTING ANTI-VIRUS SOFTWARE """ONLY""" #
-# Please note: Although that this is for testing purposes, It may cause file loss#
+# Please note: Although that this is for testing purposes, It may cause file loss(if used without care)#
 # JUST FOR WINDOWS #
 
 import colorama as cm #Used for creating some sort of UI
@@ -13,7 +9,8 @@ import sys #Used like subprocess
 import time #Used for time.sleep
 import os #Used in different parts of the program 
 import ctypes #Used in is_admin()
-
+from alive_progress import * #Used for creating a nice, cool progress bar ;)
+import random #Used for random selecting a logo
     
 def is_admin():
     #Some parts of the program need admin privileges to work properly
@@ -65,20 +62,48 @@ def tell_the_danger():
     Great_Style()
     print("For being safe from this, copy your files in any other folder(but the folder must have at least a file in it)!")
     Warning_Style()
-    CARE = input("Do you accept the potential"+cm.Fore.RED + " danger"+cm.Fore.RESET +" ["+cm.Fore.CYAN + "Y"+cm.Fore.RESET + "/" + cm.Fore.YELLOW + "N"+cm.Fore.RESET + "] ")
-    if CARE == "Y":
+    CARE = input("Do you accept the potential"+cm.Fore.RED + " danger"+cm.Fore.RESET +" ["+cm.Fore.CYAN + "Y"+cm.Fore.RESET + "/" + cm.Fore.YELLOW + "n"+cm.Fore.RESET + "] ")
+    if CARE == "Y" or CARE == "y":
         cls()
         Info_Style()
-        print("This test has two modes [easy mode, hard mode]")
-        rmode = input("Please choose the mode you want to use ["+cm.Fore.CYAN + "E"+cm.Fore.RESET +"/" + cm.Fore.YELLOW + "H"+cm.Fore.RESET + "] ")
-        if rmode == "E":
+        print("This test has six modes [easy mode, normal mode, hard mode, super hard mode, super super hard mode, ultra hard mode]")
+        print(""+cm.Fore.LIGHTGREEN_EX + "Easy mode:"+ cm.Fore.RESET+" A simple exe file that tries to encrypt ur files(easy to detect both using signatures and behavioral protection)")
+        print(""+cm.Fore.GREEN + "Normal mode:"+ cm.Fore.RESET +" An exe file that is packed by upx and tries to encrypt ur files(harder to detect using signatures)")
+        print(cm.Fore.YELLOW + "Hard mode:" + cm.Fore.RESET + " An exe filed that is packed by upx but more than usual (upx --ultra-brute) - (even harder to detect using signatures)")
+        print(cm.Fore.LIGHTYELLOW_EX + "Super hard mode:" + cm.Fore.RESET + " An exe file that is protected by VMProtect (Super hard to detect both by signatures and behavioral protection)")
+        print(cm.Fore.RED + "Super super hard mode:" + cm.Fore.RESET + " An exe file that is protected by enigma protector (Super super hard to detect by any protection system - It is so unique)")
+        print(cm.Fore.LIGHTRED_EX + "Ultra hard mode:"+ cm.Fore.RESET+ " A python file that tries to encrypt ur files(almost impossible to detect by signatures - just behavioral protection)")
+        mode = input("Please choose the mode you want to use ["+cm.Fore.LIGHTGREEN_EX + "E"+cm.Fore.RESET +"/" + cm.Fore.GREEN + "N"+cm.Fore.RESET+"/" +cm.Fore.YELLOW + "H" + cm.Fore.RESET + "/" + cm.Fore.LIGHTYELLOW_EX + "SH" + cm.Fore.RESET + "/" + cm.Fore.RED  + "SSH" + cm.Fore.RESET + "/" + cm.Fore.LIGHTRED_EX + "UH" + cm.Fore.RESET + "] ")
+        if mode == "E" or mode == "e":
             Ransom("E")
-        elif rmode == "e":
-            Ransom("E")
-        else:
+        elif mode == "N" or mode == "n":
+            Ransom("N")
+        elif mode == "H" or mode == "h":
             Ransom("H")
-    elif CARE == "y":
-        Ransom()
+        elif mode == "SH" or mode == "sh" or mode == "Sh" or mode == "sH":
+            Ransom("SH")
+        elif mode == "SSH" or mode == "ssh" or mode == "Ssh" or mode == "SSh" or mode == "sSH" or mode == "sSh" or mode == "SsH":
+            Ransom("SSH")
+        elif mode == "UH" or mode == "uh" or mode == "Uh" or mode == "uH":
+            Ransom("UH")
+        else:
+            cls()
+            print(cm.Fore.RED + """
+░██╗░░░░░░░██╗██╗░░██╗░█████╗░████████╗░█████╗░░█████╗░
+░██║░░██╗░░██║██║░░██║██╔══██╗╚══██╔══╝██╔══██╗██╔══██╗
+░╚██╗████╗██╔╝███████║███████║░░░██║░░░╚═╝███╔╝╚═╝███╔╝
+░░████╔═████║░██╔══██║██╔══██║░░░██║░░░░░░╚══╝░░░░╚══╝░
+░░╚██╔╝░╚██╔╝░██║░░██║██║░░██║░░░██║░░░░░░██╗░░░░░██╗░░
+░░░╚═╝░░░╚═╝░░╚═╝░░╚═╝╚═╝░░╚═╝░░░╚═╝░░░░░░╚═╝░░░░░╚═╝░░
+""")
+            Error_Style()
+            print("Error: Wrong mode selected!")
+            Great_Style()
+            print("Please try again!")
+            Info_Style()
+            print("Going back to main menu in 5 seconds...")
+            time.sleep(5)
+            main_menu()
     else:
         No_Worry_Style()
         print("No need to worry, going back to the main menu...")
@@ -91,6 +116,14 @@ def Ransom(mode):
     try:
         if mode == "E":
             file = "Encrypt.exe"
+        elif mode == "N":
+            file ="Encrypt-upx.exe"
+        elif mode == "H":
+            file="Encrypt-hard-upx.exe"
+        elif mode == "SH":
+            file="Encrypt-vmp.exe"
+        elif mode == "SSH":
+            file="Encrypt-enigma.exe"
         else:
             file = "Encrypt.py"
         usr = os.getlogin()
@@ -101,14 +134,15 @@ def Ransom(mode):
     """)
         Info_Style()
         print("Starting the ransomware test...")
-        time.sleep(6)
+        time.sleep(5)
         try:
-            finalf = "The-Bad-Guys//"+file 
-            if mode == "E":
+            finalf = "The-Bad-Guys\\"+file 
+            if mode == "UH":
                 letssee = subprocess.call(["python",finalf])
-
+                time.sleep(1.5)
             else:
-                letssee = subprocess.call([sys.executable, finalf])
+                letssee = subprocess.call([finalf])
+                time.sleep(1.5)
         except FileNotFoundError:
             Warning_Style()
             print("The ransomware file was not found!")
@@ -143,11 +177,7 @@ def Ransom(mode):
             time.sleep(15)
             main_menu()
         else:
-            Warning_Style()
-            print("Ransomware was able to load in memory")
-            Info_Style()
-            print("Trying to encrypt the files now...")
-            time.sleep(8)
+            time.sleep(10)
             for r, d, files in os.walk("C:\\Users\\"+usr+"\\Documents"):
                 for file in files:
                     lfile = os.path.join(r, file)
@@ -215,6 +245,18 @@ def BrokenWall(mode):
         if mode == "E":
             file1 = "BrokenWall.exe"
             file2 = "BadExclusion.exe"
+        elif mode == "N":
+            file1 = "BrokenWall-upx.exe"
+            file2 = "BadExclusion-upx.exe"
+        elif mode == "H":
+            file1="BrokenWall-hard-upx.exe"
+            file2="BadExclusion-hard-upx.exe"
+        elif mode == "SH":
+            file1="BrokenWall-vmp.exe"
+            file1="BadExclusion-vmp.exe"
+        elif mode == "SSH":
+            file1="BrokenWall-themida.exe"
+            file2="BadExclusion-themida.exe"
         else:
             file1 = "BrokenWall.bat"
             file2 = "BadExclusion.bat"
@@ -253,8 +295,7 @@ def BrokenWall(mode):
 ░╚═════╝░╚═╝░░░░░░╚════╝░╚═╝
 """)
                 Great_Style()
-                print(
-                    "Your anti-virus or firewall blocked us from adding the exclusions to your firewall!")
+                print("Your anti-virus or firewall blocked us from adding the exclusions to your firewall!")
                 Great_Style()
                 print("Also, it blocked us from turning the firewall off!")
                 Info_Style()
@@ -597,13 +638,18 @@ def FalseButPositive():
     print("You may see some pop-ups open, don't forget close all of them, else we can not continue the test!")
     time.sleep(7)
     blocked = 0
-    for file in os.listdir("The-False-Guys"):
-        ran = subprocess.Popen("start The-False-Guys\\"+file+"",stdout=subprocess.PIPE ,shell=True)
-        (out, err) = ran.communicate()
-        if err == 1 or err == 2:
-            blocked+=1
-        else:
-            pass
+    with alive_bar(len(os.listdir("The-False-Guys")), spinner="dots_waves", theme="classic",length=30,receipt=False,dual_line=True) as bar:
+        for file in os.listdir("The-False-Guys"):
+            bar.text(cm.Fore.CYAN + "Running "+cm.Fore.GREEN + file + cm.Fore.RESET)
+            ran = subprocess.Popen("start The-False-Guys\\"+file+"",stdout=subprocess.PIPE ,shell=True)
+            (out, err) = ran.communicate()
+            if err == 1 or err == 2:
+                blocked+=1
+            else:
+                pass
+            time.sleep(0.35)
+            bar()
+    time.sleep(0.7)
     if blocked <= 1:
         cls()
         print(cm.Fore.MAGENTA + """
@@ -692,10 +738,26 @@ def FalseButPositive():
         time.sleep(12)
         main_menu()
 
-def Spyware_test(): # Here we test if your anti-virus can block us from accessing your camera and microphone!
+def Spyware_test(mode): # Here we test if your anti-virus can block us from accessing your camera and microphone!
     try:
-        file1="Spycam.py"
-        file2="Spymic.py"
+        if mode == "UH":
+            file1="Spycam.py"
+            file2="Spymic.py"
+        elif mode == "SSH":
+            file1="Spycam-themida.exe"
+            file2="Spymic-themida.exe"
+        elif mode == "SH":
+            file1="Spycam-vmp.exe"
+            file2="Spymic-vmp.exe"
+        elif mode == "H":
+            file1="Spycam-hard-upx.exe"
+            file2="Spymic-hard-upx.exe"
+        elif mode == "N":
+            file1="Spycam-upx.exe"
+            file2="Spymic-upx.exe"
+        else:
+            file1="Spycam.exe"
+            file2="Spymic.exe"
         cls()
         print(cm.Fore.GREEN + """
 █▀ ▀█▀ ▄▀█ █▀█ ▀█▀ █ █▄░█ █▀▀
@@ -705,9 +767,12 @@ def Spyware_test(): # Here we test if your anti-virus can block us from accessin
         print("Trying to access your camera to take a picture...")
         time.sleep(4)
         try:
-            finalf = "The-Bad-Guys//"+file1 
-            finalf2 = "The-Bad-Guys//"+file2
-            letssee = subprocess.call(["python", finalf])
+            finalf = "The-Bad-Guys\\"+file1 
+            finalf2 = "The-Bad-Guys\\"+file2
+            if mode == "UH":
+                letssee = subprocess.call(["python", finalf],stdout=subprocess.PIPE, shell=True)
+            else:
+                letssee = subprocess.call(finalf,stdout=subprocess.PIPE, shell=True)
         except FileNotFoundError:
             Warning_Style()
             print("The spyware file was not found!")
@@ -719,11 +784,11 @@ def Spyware_test(): # Here we test if your anti-virus can block us from accessin
             print("Going back to the main menu in 12 seconds...")
             time.sleep(12)
             main_menu()
-        if os.path.isfile("The-Bad-Guys//Oh-Spy.png"):
+        if os.path.isfile("The-Bad-Guys\\Oh-Spy.png"):
             spy1 = True
             Warning_Style()
             print("Spyware was able to take a picture from you!")
-            os.remove("The-Bad-Guys//Oh-Spy.png")
+            os.remove("The-Bad-Guys\\Oh-Spy.png")
             Info_Style()
             print("Trying to access your microphone to record a voice...")
             time.sleep(3)
@@ -735,7 +800,10 @@ def Spyware_test(): # Here we test if your anti-virus can block us from accessin
             print("Trying to access your microphone to record a voice...")
             time.sleep(3)
         try:
-            letssee = subprocess.call(["python", finalf2])
+            if mode == "H":
+                letssee = subprocess.call(["python", finalf2])
+            else:
+                letssee= subprocess.call(finalf2,stdout=subprocess.PIPE, shell=True)
         except FileNotFoundError:
             Warning_Style()
             print("The spyware file was not found!")
@@ -747,8 +815,8 @@ def Spyware_test(): # Here we test if your anti-virus can block us from accessin
             print("Going back to the main menu in 12 seconds...")
             time.sleep(12)
             main_menu()   
-        if os.path.isfile("The-Bad-Guys//Oh-Spy.wav"):
-            os.remove("The-Bad-Guys//Oh-Spy.wav")
+        if os.path.isfile("The-Bad-Guys\\Oh-Spy.wav"):
+            os.remove("The-Bad-Guys\\Oh-Spy.wav")
             spy2 = True
         else:
             spy2 = False
@@ -838,41 +906,202 @@ def Spyware_test(): # Here we test if your anti-virus can block us from accessin
         time.sleep(12)
         main_menu()
 
-
 def main_menu():
-    cls()
-    print(cm.Fore.CYAN + """   
-██████╗░██████╗░░█████╗░████████╗███████╗░██████╗████████╗
-██╔══██╗██╔══██╗██╔══██╗╚══██╔══╝██╔════╝██╔════╝╚══██╔══╝
-██████╔╝██████╔╝██║░░██║░░░██║░░░█████╗░░╚█████╗░░░░██║░░░
-██╔═══╝░██╔══██╗██║░░██║░░░██║░░░██╔══╝░░░╚═══██╗░░░██║░░░
-██║░░░░░██║░░██║╚█████╔╝░░░██║░░░███████╗██████╔╝░░░██║░░░
-╚═╝░░░░░╚═╝░░╚═╝░╚════╝░░░░╚═╝░░░╚══════╝╚═════╝░░░░╚═╝░░░""")
-    print(cm.Fore.GREEN + "- Test your system's protection like a pro! ")
+    cls()   
+    c1 = cm.Fore.RED + """                 .-:     :-.                 
+              :+#+         =#+:              
+          .-*@@+   """+cm.Fore.CYAN + "PROTEST"+cm.Fore.RED +"""   =@@*=.          
+          %@@# """+cm.Fore.LIGHTCYAN_EX + "Protection Test"+cm.Fore.RED+""" #@@%          
+          @@@%                 #@@@          
+          @@@@ """+cm.Fore.GREEN + "By @SepyMovasat"+cm.Fore.RED+""" @@@@          
+          @@@@:    :=#@#+:    :@@@@.         
+         .@@@@+ -*@@@#+#@@@*- =@@@@:         
+         -@@@@%++++-     -++++%@@@@=         
+      :+%@@@@@@@@@%*=: :=*%@@@@@@@@@@*:      
+   :*@@@@@@@@@@@@@@@@@.@@@@@@@@@@@@@@@@@*-   
+-*@@@@@@#+--+#@@@@:       :@@@@#+-:+#@@@@@@*-
+@@@%*-.    +@#:+@@@-     -@@@+-#@+    .-+%@@@
+@@-        +@@.  -=+=   =+=-  .@@+        :@@
+@#         +@@.   =@@* *@@=   :@@+         #@
+@:         -%@@%+::@@@@@@@::+%@@%-         .@
+*    """+cm.Fore.LIGHTMAGENTA_EX + "Cool" +cm.Fore.RED+"""    .=#@@-@@@@@@@-@@#=.    """+cm.Fore.LIGHTMAGENTA_EX + "Pro!"+cm.Fore.RED+"""    *
+.                -:#@@@@@#:-                .
+                .+%@@@@@@@%+.                
+   :.         -#@@@@@@%@@@@@@#-         .:   
+    .=*#*+=-*@@@@@%+-   -+%@@@@@*-=+*#*=.    
+        -*@@@@%*-   """+cm.Fore.LIGHTMAGENTA_EX + "Easy"+cm.Fore.RED+"""   -*%@@@@*-                     
+"""
+
+    c2 = cm.Fore.YELLOW + """                      =#%%#=                      
+                    :%#-::-#@:                    
+                    -=::::::+@-                   
+              .:  :@+::::::::+@:  :.              
+            =%#*%+%#::::::::..*@+%**%=            
+           +@=::-@|||"""+cm.Fore.CYAN + "PROTEST"+cm.Fore.YELLOW+"""|||@@:..:%*           
+ .*%%%####%@+:::-"""+cm.Fore.LIGHTCYAN_EX + "Protection Test"+cm.Fore.YELLOW+"""-....-@%#####%%*: 
+=@#+++====#@-::::::::::::.............@#=======*@=
+@#++++====#@-::::::::::::.............%#========#@
+@#++"""+cm.Fore.LIGHTMAGENTA_EX + "Cool" +cm.Fore.YELLOW+"""==*@=::::::::::::::.....:....:@#++"""+cm.Fore.LIGHTMAGENTA_EX + "Pro!"+cm.Fore.YELLOW+"""+++@
+@#+++++++++%%-::--"""+cm.Fore.GREEN + "By @SepyMovasat"+cm.Fore.YELLOW+"""--..#%+++++++++#@
+@#++++++++++%%=::::::::::::........:%%++++++++++#@
+@@%%%%%%@@%%%%@#=-:::::::::::....-#@%%%%@@%%%%%%@@
+@*------%%++++=+#@##+=-"""+cm.Fore.LIGHTMAGENTA_EX + "Easy"+cm.Fore.YELLOW+"""-=+*%#+------*@++++++#@
+@*------%%++++====+*#%%%%%%%%#*=--------*@++++++#@
+@*------%%++++++========%%======--------*@++++++#@
+@*------%%++++++++++++++%%==============#@++++++#@
+@*------%%++++++++++++++%%==============#@++++++#@
+@@%%%%%%@@%%%%%%@@%%%%%%%%%%%%%%%@%%%%%%%@%%%%%%@@
+@#++++==========%%====--"""+cm.Fore.BLUE + "MIT"+cm.Fore.YELLOW+"""-----#@++++==========*@
+@#++++==========%%===="""+cm.Fore.RED + "License"+cm.Fore.YELLOW+"""---#@++++==========*@
+@#+++++=========%%=====---------#@++++++========*@
+@%++++++++++++++%%==============#@++++++++++++++#@
+-@#+++++++++++++%%==============#@+++++++++++++#@-
+ .+#%%%%%%%%%%%%@@%%%%%%%%%%%%%%@@%%%%%%%%%%%%#+."""
+
+    c3 = cm.Fore.GREEN + """                       =%%-                       
+                     .#%.:%#.                     
+                   -##-    -%*:                   
+                -*%+:  :@@.  :*%*-                
+             -##=:      --      :+##+-.           
+      -+*##:          """+cm.Fore.CYAN + "PROTEST"+cm.Fore.GREEN+"""       :=*##*+-      
+     *%:.         """+cm.Fore.LIGHTCYAN_EX + "Protection Test"+cm.Fore.GREEN+"""        .:%*     
+     ##  *%+           :--:           +%*  ##     
+     *%  -+:        .*%+==+%*.        :+-  %*     
+     =@             %* """+cm.Fore.LIGHTMAGENTA_EX + "Pro!"+cm.Fore.GREEN+""" *%            .@-     
+      @+   """+cm.Fore.LIGHTMAGENTA_EX + "Easy"+cm.Fore.GREEN+"""    :@=::::::=@:   """+cm.Fore.LIGHTMAGENTA_EX + "Cool" +cm.Fore.GREEN+"""    +@      
+      =@.        :@*++++++++++*@.        .@=      
+       ##        =@     --     @=        ##       
+        %+       =@    -@@-    @=       .+        
+        .@+      =@     --     @=      =:         
++%%#:    .%*     :@*==========*@:     *%.   ..*%%+
+#%*@+%*:::-@#      ::::::::::::      #@-::-*%+%###
+ ::   -=====*%.                    :%*=====:   :: 
+#%*@+++++++++@@=  """+cm.Fore.RED + "By @SepyMovasat" + cm.Fore.GREEN+""" =@%+++++++++%###
++%%#:.:**=....:##               .##:....=**:..*%%+
+      %%+@######%@=     :.     =@%######@+%%      
+      .=+-     ::-@%.  -@@.  :%%-::     -+=.      
+        +%##-+%+++++%+  .  .*%+++++%+-##%+        
+        #%#%=-       +@+  +@=       -=%#%*        
+          .            +##+            ."""
+          
+    c4 = cm.Fore.GREEN + """ .=+=:                                      :=+=: 
++@@@@@#                                    *@@@@@*
+@@@+@@@+-:                              :-=@@@=@@@
+.*@@@@@@@@@@=-#+                  =%-=@@@@@@@@@@#.
+    *@@=.-*@@@@#:     """+cm.Fore.CYAN + "PROTEST"+cm.Fore.GREEN+"""    .*@@@@#-.-@@#    
+    .@@%:-%@@@@#: """+cm.Fore.LIGHTCYAN_EX + "Protection Test"+cm.Fore.GREEN+""".*@@@@%-:%@@:    
+     =%@@@@#:-%@@*+*#%@@@@@@%#*+*@@%=:#@@@@%=     
+     :%@@@@@++#@@@@%#*+*@@#+*#%@@@@%+=@@@@@%-     
+      -*:.+@@@%*=.     =@@+     .-*%@@@*..*=      
+          .@@#  """+cm.Fore.LIGHTMAGENTA_EX + "Easy"+cm.Fore.GREEN+"""  .+@@*.  """+cm.Fore.LIGHTMAGENTA_EX + "Cool" +cm.Fore.GREEN+"""  *@@:          
+           @@@    -#@@@@@@@@@@#=    %@@.          
+           %@@.   -@@#::...:#@@=    @@@           
+           +@@=    @@@ """+cm.Fore.LIGHTMAGENTA_EX + "Pro!"+cm.Fore.GREEN+""" %@@.   -@@*           
+           .@@%    +@@+    =@@*    #@@:           
+            *@@-    %@@:  .@@@    :@@#            
+            .@@@.   :@@@..%@@:    %@@:            
+           .*@@@#    :@@@@@@-    #@@@%-           
+         .*@@%*@@#    .%@@%:    *@@**@@%=         
+       .*@@%=  #@@%.   =@@+    #@@@: :*@@%-       
+     .*@@%=  =@@@@@@-  =@@+  :@@@%@@#: .*@@%=     
+   .*@@%=  =@@@*..#@@#.=@@+.*@@#. -%@@*: .*@@%=   
+  *@@%=  =@@@*.    -%@@%@@%@@@-     -%@@#: .*@@@: 
+  @@@  =@@@*.        =%@@@@%=         -%@@#:.*@@- 
+  #@@@@@@*.            :++:             -%@@@@@@. 
+  .-==++.         """+cm.Fore.RED + "By @SepyMovasat" + cm.Fore.GREEN+"""         -=--:.  """
+          
+    print(random.choice([c1,c1,c1,c2,c2,c3,c3,c4,c4]))
     print(cm.Fore.MAGENTA + "\n1- Test Ransomware Protection\n ")
-    print(cm.Fore.MAGENTA +"2- Test Firewall Protection | Just windows firewall\n")
+    print(cm.Fore.MAGENTA +"2- Test Windows Firewall Protection vs. Backdoor\n")
     print(cm.Fore.MAGENTA + "3- Roll back firewall test changes")
     print(cm.Fore.MAGENTA + "\n4- False Positive Test")
     print(cm.Fore.MAGENTA + "\n5- Spyware Test(camera and microphone)")
     print(cm.Fore.MAGENTA + "\n6- Exit")
-    print(cm.Fore.GREEN + "\nBy @TheCcortex - MIT license")
     main_inp = input(cm.Fore.RESET + "Which one? ")
     if main_inp == "1":
         tell_the_danger()
     elif main_inp == "2":
         Info_Style()
-        print("This test had two modes: [easy mode, hard mode]")
-        eorh =input("Please choose the mode you want to use ["+cm.Fore.CYAN + "E"+cm.Fore.RESET +"/" + cm.Fore.YELLOW + "H"+cm.Fore.RESET + "] ")
-        if eorh == "E" or eorh == "e":
+        print("This test has six modes [easy mode, normal mode, hard mode, super hard mode, super super hard mode, ultra hard mode]")
+        print(""+cm.Fore.LIGHTGREEN_EX + "Easy mode:"+ cm.Fore.RESET+" A simple exe file that tries to spy on you(easy to detect both using signatures and behavioral protection)")
+        print(""+cm.Fore.GREEN + "Normal mode:"+ cm.Fore.RESET +" An exe file that is packed by upx and tries to spy on you(harder to detect using signatures)")
+        print(cm.Fore.YELLOW + "Hard mode:" + cm.Fore.RESET + " An exe filed that is packed by upx but more than usual (upx --ultra-brute) - (even harder to detect using signatures)")
+        print(cm.Fore.LIGHTYELLOW_EX + "Super hard mode:" + cm.Fore.RESET + " An exe file that is protected by VMProtect (Super hard to detect both by signatures and behavioral protection)")
+        print(cm.Fore.RED + "Super super hard mode:" + cm.Fore.RESET + " An exe file that is protected by Themida (Super super hard to detect by any protection system - It is so unique)")
+        print(cm.Fore.LIGHTRED_EX + "Ultra hard mode:"+ cm.Fore.RESET+ " A python file that tries to encrypt ur files(almost impossible to detect by signatures - just behavioral protection)")
+        mode =input("Please choose the mode you want to use ["+cm.Fore.LIGHTGREEN_EX+ "E"+cm.Fore.RESET +"/" + cm.Fore.GREEN+ "N"+cm.Fore.RESET+"/" +cm.Fore.YELLOW + "H" + cm.Fore.RESET + "/" + cm.Fore.LIGHTYELLOW_EX + "SH" + cm.Fore.RESET + "/" + cm.Fore.RED  + "SSH" + cm.Fore.RESET + "/" + cm.Fore.LIGHTRED_EX + "UH" + cm.Fore.RESET + "] ")
+        if mode == "E" or mode == "e":
             BrokenWall("E")
-        else:
+        elif mode == "N" or mode == "n":
+            BrokenWall("N")
+        elif mode == "H" or mode == "h":
             BrokenWall("H")
+        elif mode == "SH" or mode == "sh" or mode == "Sh" or mode == "sH":
+            BrokenWall("SH")
+        elif mode == "SSH" or mode == "ssh" or mode == "Ssh" or mode == "SSh" or mode == "sSH" or mode == "sSh" or mode == "SsH":
+            BrokenWall("SSH")
+        elif mode == "UH" or mode == "uh" or mode == "Uh" or mode == "uH":
+            BrokenWall("UH")
+        else:
+            cls()
+            print(cm.Fore.RED + """
+░██╗░░░░░░░██╗██╗░░██╗░█████╗░████████╗░█████╗░░█████╗░
+░██║░░██╗░░██║██║░░██║██╔══██╗╚══██╔══╝██╔══██╗██╔══██╗
+░╚██╗████╗██╔╝███████║███████║░░░██║░░░╚═╝███╔╝╚═╝███╔╝
+░░████╔═████║░██╔══██║██╔══██║░░░██║░░░░░░╚══╝░░░░╚══╝░
+░░╚██╔╝░╚██╔╝░██║░░██║██║░░██║░░░██║░░░░░░██╗░░░░░██╗░░
+░░░╚═╝░░░╚═╝░░╚═╝░░╚═╝╚═╝░░╚═╝░░░╚═╝░░░░░░╚═╝░░░░░╚═╝░░
+""")
+            Error_Style()
+            print("Error: Wrong mode selected!")
+            Great_Style()
+            print("Please try again!")
+            Info_Style()
+            print("Going back to main menu in 5 seconds...")
+            time.sleep(5)
     elif main_inp == "3":
         Roll_back()
     elif main_inp == "4":
         TellTheFalseDanger()
     elif main_inp == "5":
-        Spyware_test()
+        print("This test has six modes [easy mode, normal mode, hard mode, super hard mode, super super hard mode, ultra hard mode]")
+        print(""+cm.Fore.LIGHTGREEN_EX + "Easy mode:"+ cm.Fore.RESET+" A simple exe file that tries to spy on you(easy to detect both using signatures and behavioral protection)")
+        print(""+cm.Fore.GREEN + "Normal mode:"+ cm.Fore.RESET +" An exe file that is packed by upx and tries to spy on you(harder to detect using signatures)")
+        print(cm.Fore.YELLOW + "Hard mode:" + cm.Fore.RESET + " An exe filed that is packed by upx but more than usual (upx --ultra-brute) - (even harder to detect using signatures)")
+        print(cm.Fore.LIGHTYELLOW_EX + "Super hard mode:" + cm.Fore.RESET + " An exe file that is protected by VMProtect (Super hard to detect both by signatures and behavioral protection)")
+        print(cm.Fore.RED + "Super super hard mode:" + cm.Fore.RESET + " An exe file that is protected by Themida (Super super hard to detect by any protection system - It is so unique)")
+        print(cm.Fore.LIGHTRED_EX + "Ultra hard mode:"+ cm.Fore.RESET+ " A python file that tries to encrypt ur files(almost impossible to detect by signatures - just behavioral protection)")
+        mode =input("Please choose the mode you want to use ["+cm.Fore.LIGHTGREEN_EX+ "E"+cm.Fore.RESET +"/" + cm.Fore.GREEN+ "N"+cm.Fore.RESET+"/" +cm.Fore.YELLOW + "H" + cm.Fore.RESET + "/" + cm.Fore.LIGHTYELLOW_EX + "SH" + cm.Fore.RESET + "/" + cm.Fore.RED  + "SSH" + cm.Fore.RESET + "/" + cm.Fore.LIGHTRED_EX + "UH" + cm.Fore.RESET + "] ")
+        if mode == "E" or mode == "e":
+            Spyware_test("E")
+        elif mode == "N" or mode == "n":
+            Spyware_test("N")
+        elif mode == "H" or mode == "h":
+            Spyware_test("H")
+        elif mode == "SH" or mode == "sh" or mode == "Sh" or mode == "sH":
+            Spyware_test("SH")
+        elif mode == "SSH" or mode == "ssh" or mode == "Ssh" or mode == "SSh" or mode == "sSH" or mode == "sSh" or mode == "SsH":
+            Spyware_test("SSH")
+        elif mode == "UH" or mode == "uh" or mode == "Uh" or mode == "uH":
+            Spyware_test("UH")
+        else:
+            cls()
+            print(cm.Fore.RED + """
+░██╗░░░░░░░██╗██╗░░██╗░█████╗░████████╗░█████╗░░█████╗░
+░██║░░██╗░░██║██║░░██║██╔══██╗╚══██╔══╝██╔══██╗██╔══██╗
+░╚██╗████╗██╔╝███████║███████║░░░██║░░░╚═╝███╔╝╚═╝███╔╝
+░░████╔═████║░██╔══██║██╔══██║░░░██║░░░░░░╚══╝░░░░╚══╝░
+░░╚██╔╝░╚██╔╝░██║░░██║██║░░██║░░░██║░░░░░░██╗░░░░░██╗░░
+░░░╚═╝░░░╚═╝░░╚═╝░░╚═╝╚═╝░░╚═╝░░░╚═╝░░░░░░╚═╝░░░░░╚═╝░░
+""")
+            Error_Style()
+            print("Error: Wrong mode selected!")
+            Great_Style()
+            print("Please try again!")
+            Info_Style()
+            print("Going back to main menu in 5 seconds...")
+            time.sleep(5)
+            main_menu()
     elif main_inp == "6":
         cls()
         print(cm.Fore.GREEN + """
@@ -883,6 +1112,7 @@ def main_menu():
 ██████╔╝███████╗███████╗  ░░░██║░░░╚█████╔╝╚██████╔╝██╗
 ╚═════╝░╚══════╝╚══════╝  ░░░╚═╝░░░░╚════╝░░╚═════╝░╚═╝
 """)
+        Great_Style()
         print(cm.Fore.RESET + "Exiting in 4 seconds...")
         time.sleep(4)
         exit()
@@ -897,14 +1127,13 @@ def main_menu():
 ░░░╚═╝░░░╚═╝░░╚═╝░░╚═╝╚═╝░░╚═╝░░░╚═╝░░░░░░╚═╝░░░░░╚═╝░░
 """)
         Error_Style()
-        print("Error: Wrong option/input selected!")
+        print("Error: Wrong option selected!")
         Great_Style()
         print("Please try again!")
         Info_Style()
-        print("Going back to main menu in 6 seconds...")
-        time.sleep(6)
+        print("Going back to main menu in 5 seconds...")
+        time.sleep(5)
         main_menu()
-
 
 if __name__ == "__main__":
     if is_admin():
@@ -926,4 +1155,4 @@ if __name__ == "__main__":
         print("See you after you ran me as admin!")
         Info_Style()
         print("Exiting in 7 seconds...")
-        time.sleep(7)
+        time.sleep(7) 

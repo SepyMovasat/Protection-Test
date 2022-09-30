@@ -1,6 +1,6 @@
 # Created by @TheCcortex | Under MIT License #
 # IMPORTANT: JUST USE THIS FOR TESTING ANTI-VIRUS SOFTWARE """ONLY""" #
-# Please note: Although that this is for testing purposes, It may cause file loss#
+# Please note: Although that this is for testing purposes, It may cause file loss(if used without care)#
 # JUST FOR LINUX #
 
 import colorama as cm #Used for creating some sort of UI
@@ -9,6 +9,7 @@ import sys #Used like subprocess
 import time #Used for time.sleep
 import os #Used in different parts of the program 
 import ctypes #Used in is_admin()
+import random #Used for random selecting a logo
 
     
 def is_admin():
@@ -69,10 +70,10 @@ def tell_the_danger():
     if CARE == "Y" or CARE == "y":
         cls()
         Info_Style()
-        print("This test has two modes [easy mode, hard mode] for windows")
+        print("This test has six modes for windows")
         Info_Style()
         print("But you are using linux and for linux, we just have the hard mode!")
-        rmode = input("Do you wanna continue? ["+cm.Fore.CYAN + "Y"+cm.Fore.RESET +"/" + cm.Fore.YELLOW + "N"+cm.Fore.RESET + "] ")
+        rmode = input("Do you wanna continue? ["+cm.Fore.CYAN + "Y"+cm.Fore.RESET +"/" + cm.Fore.YELLOW + "n"+cm.Fore.RESET + "] ")
         if rmode == "Y" or rmode == "y":
             Ransom()
         else:
@@ -99,10 +100,11 @@ def Ransom():
     """)
         Info_Style()
         print("Starting the ransomware test...")
-        time.sleep(6)
+        time.sleep(5)
         try:
             finalf = "The-Bad-Guys//"+file 
             letssee = subprocess.call(["python",finalf])
+            time.sleep(1.5)
             if letssee == 1 or letssee == 2:
                 cls()
                 print(cm.Fore.MAGENTA + """
@@ -208,7 +210,7 @@ def BrokenWall():
     try:
         Info_Style()
         print("Prerequisites: ufw installed and enabled!")
-        x = input("Do you have it "+cm.Fore.GREEN + 'installed'+cm.Fore.RESET+" and "+cm.Fore.CYAN + 'enabled'+cm.Fore.RESET+"? ["+cm.Fore.CYAN + "Y"+cm.Fore.RESET +"/" + cm.Fore.YELLOW + "N"+cm.Fore.RESET + "] ")
+        x = input("Do you have it "+cm.Fore.GREEN + 'installed'+cm.Fore.RESET+" and "+cm.Fore.CYAN + 'enabled'+cm.Fore.RESET+"? ["+cm.Fore.CYAN + "Y"+cm.Fore.RESET +"/" + cm.Fore.YELLOW + "n"+cm.Fore.RESET + "] ")
         if x == "y" or x == "Y":
             file1 = "BrokenWall-l.sh"
             file2 = "BadExclusion-l.sh"
@@ -585,29 +587,123 @@ def Spyware_test(): # Here we test if your anti-virus can block us from accessin
 
 def main_menu():
     cls()
-    print(cm.Fore.CYAN + """   
-██████╗░██████╗░░█████╗░████████╗███████╗░██████╗████████╗
-██╔══██╗██╔══██╗██╔══██╗╚══██╔══╝██╔════╝██╔════╝╚══██╔══╝
-██████╔╝██████╔╝██║░░██║░░░██║░░░█████╗░░╚█████╗░░░░██║░░░
-██╔═══╝░██╔══██╗██║░░██║░░░██║░░░██╔══╝░░░╚═══██╗░░░██║░░░
-██║░░░░░██║░░██║╚█████╔╝░░░██║░░░███████╗██████╔╝░░░██║░░░
-╚═╝░░░░░╚═╝░░╚═╝░╚════╝░░░░╚═╝░░░╚══════╝╚═════╝░░░░╚═╝░░░""")
-    print(cm.Fore.GREEN + "- Test your system's protection like a pro! ")
+    c1 = cm.Fore.RED + """                 .-:     .-.                 
+              :+#+         =#+:              
+          .-*@@+   """+cm.Fore.CYAN + "PROTEST"+cm.Fore.RED +"""   =@@*=.          
+          %@@# """+cm.Fore.LIGHTCYAN_EX + "Protection Test"+cm.Fore.RED+""" #@@%          
+          @@@%                 #@@@          
+          @@@@ """+cm.Fore.GREEN + "By @SepyMovasat"+cm.Fore.RED+""" @@@@          
+          @@@@:    :=#@#+:    :@@@@.         
+         .@@@@+ -*@@@#+#@@@*- =@@@@:         
+         -@@@@%++++-     -++++%@@@@=         
+      :+%@@@@@@@@@%*=: :=*%@@@@@@@@@@*:      
+   :*@@@@@@@@@@@@@@@@@.@@@@@@@@@@@@@@@@@*-   
+-*@@@@@@#+--+#@@@@:       :@@@@#+-:+#@@@@@@*-
+@@@%*-.    +@#:+@@@-     -@@@+-#@+    .-+%@@@
+@@-        +@@.  -=+=   =+=-  .@@+        :@@
+@#         +@@.   =@@* *@@=   :@@+         #@
+@:         -%@@%+::@@@@@@@::+%@@%-         .@
+*    """+cm.Fore.LIGHTMAGENTA_EX + "Cool" +cm.Fore.RED+"""    .=#@@-@@@@@@@-@@#=.    """+cm.Fore.LIGHTMAGENTA_EX + "Pro!"+cm.Fore.RED+"""    *
+.                -:#@@@@@#:-                .
+                .+%@@@@@@@%+.                
+   :.         -#@@@@@@%@@@@@@#-         .:   
+    .=*#*+=-*@@@@@%+-   -+%@@@@@*-=+*#*=.    
+        -*@@@@%*-   """+cm.Fore.LIGHTMAGENTA_EX + "Easy"+cm.Fore.RED+"""   -*%@@@@*-                     
+"""
+
+    c2 = cm.Fore.YELLOW + """                      =#%%#=                      
+                    :%#-::-#@:                    
+                    -=::::::+@-                   
+              .:  :@+::::::::+@:  :.              
+            =%#*%+%#::::::::..*@+%**%=            
+           +@=::-@|||"""+cm.Fore.CYAN + "PROTEST"+cm.Fore.YELLOW+"""|||@@:..:%*           
+ .*%%%####%@+:::-"""+cm.Fore.LIGHTCYAN_EX + "Protection Test"+cm.Fore.YELLOW+"""-....-@%#####%%*: 
+=@#+++====#@-::::::::::::.............@#=======*@=
+@#++++====#@-::::::::::::.............%#========#@
+@#+"""+cm.Fore.LIGHTMAGENTA_EX + "Cool" +cm.Fore.YELLOW+"""+==*@=::::::::::::::.....:....:@#++"""+cm.Fore.LIGHTMAGENTA_EX + "Pro!"+cm.Fore.YELLOW+"""+++@
+@#+++++++++%%-::--"""+cm.Fore.GREEN + "By @SepyMovasat"+cm.Fore.YELLOW+"""--..#%+++++++++#@
+@#++++++++++%%=::::::::::::........:%%++++++++++#@
+@@%%%%%%@@%%%%@#=-:::::::::::....-#@%%%%@@%%%%%%@@
+@*------%%++++=+#@##+=-"""+cm.Fore.LIGHTMAGENTA_EX + "Easy"+cm.Fore.YELLOW+"""-=+*%#+------*@++++++#@
+@*------%%++++====+*#%%%%%%%%#*=--------*@++++++#@
+@*------%%++++++========%%======--------*@++++++#@
+@*------%%++++++++++++++%%==============#@++++++#@
+@*------%%++++++++++++++%%==============#@++++++#@
+@@%%%%%%@@%%%%%%@@%%%%%%%%%%%%%%%@%%%%%%%@%%%%%%@@
+@#++++==========%%====--"""+cm.Fore.BLUE + "MIT"+cm.Fore.YELLOW+"""-----#@++++==========*@
+@#++++==========%%===="""+cm.Fore.RED + "License"+cm.Fore.YELLOW+"""---#@++++==========*@
+@#+++++=========%%=====---------#@++++++========*@
+@%++++++++++++++%%==============#@++++++++++++++#@
+-@#+++++++++++++%%==============#@+++++++++++++#@-
+ .+#%%%%%%%%%%%%@@%%%%%%%%%%%%%%@@%%%%%%%%%%%%#+."""
+
+    c3 = cm.Fore.GREEN + """                       =%%-                       
+                     .#%.:%#.                     
+                   -##-    -%*:                   
+                -*%+:  :@@.  :*%*-                
+             -##=:      --      :+##+-.           
+      -+*##:          """+cm.Fore.CYAN + "PROTEST"+cm.Fore.GREEN+"""       :=*##*+-      
+     *%:.         """+cm.Fore.LIGHTCYAN_EX + "Protection Test"+cm.Fore.GREEN+"""        .:%*     
+     ##  *%+           :--:           +%*  ##     
+     *%  -+:        .*%+==+%*.        :+-  %*     
+     =@             %* """+cm.Fore.LIGHTMAGENTA_EX + "Pro!"+cm.Fore.GREEN+""" *%            .@-     
+      @+   """+cm.Fore.LIGHTMAGENTA_EX + "Easy"+cm.Fore.GREEN+"""    :@=::::::=@:   """+cm.Fore.LIGHTMAGENTA_EX + "Cool" +cm.Fore.GREEN+"""    +@      
+      =@.        :@*++++++++++*@.        .@=      
+       ##        =@     --     @=        ##       
+        %+       =@    -@@-    @=       .+        
+        .@+      =@     --     @=      =:         
++%%#:    .%*     :@*==========*@:     *%.   ..*%%+
+#%*@+%*:::-@#      ::::::::::::      #@-::-*%+%###
+ ::   -=====*%.                    :%*=====:   :: 
+#%*@+++++++++@@=  """+cm.Fore.RED + "By @SepyMovasat" + cm.Fore.GREEN+""" =@%+++++++++%###
++%%#:.:**=....:##               .##:....=**:..*%%+
+      %%+@######%@=     :.     =@%######@+%%      
+      .=+-     ::-@%.  -@@.  :%%-::     -+=.      
+        +%##-+%+++++%+  .  .*%+++++%+-##%+        
+        #%#%=-       +@+  +@=       -=%#%*        
+          .            +##+            ."""
+          
+    c4 = cm.Fore.GREEN + """ .=+=:                                      :=+=: 
++@@@@@#                                    *@@@@@*
+@@@+@@@+-:                              :-=@@@=@@@
+.*@@@@@@@@@@=-#+                  =%-=@@@@@@@@@@#.
+    *@@=.-*@@@@#:     """+cm.Fore.CYAN + "PROTEST"+cm.Fore.GREEN+"""    .*@@@@#-.-@@#    
+    .@@%:-%@@@@#: """+cm.Fore.LIGHTCYAN_EX + "Protection Test"+cm.Fore.GREEN+""".*@@@@%-:%@@:    
+     =%@@@@#:-%@@*+*#%@@@@@@%#*+*@@%=:#@@@@%=     
+     :%@@@@@++#@@@@%#*+*@@#+*#%@@@@%+=@@@@@%-     
+      -*:.+@@@%*=.     =@@+     .-*%@@@*..*=      
+          .@@#  """+cm.Fore.LIGHTMAGENTA_EX + "Easy"+cm.Fore.GREEN+"""  .+@@*.  """+cm.Fore.LIGHTMAGENTA_EX + "Cool" +cm.Fore.GREEN+"""  *@@:          
+           @@@    -#@@@@@@@@@@#=    %@@.          
+           %@@.   -@@#::...:#@@=    @@@           
+           +@@=    @@@ """+cm.Fore.LIGHTMAGENTA_EX + "Pro!"+cm.Fore.GREEN+""" %@@.   -@@*           
+           .@@%    +@@+    =@@*    #@@:           
+            *@@-    %@@:  .@@@    :@@#            
+            .@@@.   :@@@..%@@:    %@@:            
+           .*@@@#    :@@@@@@-    #@@@%-           
+         .*@@%*@@#    .%@@%:    *@@**@@%=         
+       .*@@%=  #@@%.   =@@+    #@@@: :*@@%-       
+     .*@@%=  =@@@@@@-  =@@+  :@@@%@@#: .*@@%=     
+   .*@@%=  =@@@*..#@@#.=@@+.*@@#. -%@@*: .*@@%=   
+  *@@%=  =@@@*.    -%@@%@@%@@@-     -%@@#: .*@@@: 
+  @@@  =@@@*.        =%@@@@%=         -%@@#:.*@@- 
+  #@@@@@@*.            :++:             -%@@@@@@. 
+  .-==++.         """+cm.Fore.RED + "By @SepyMovasat" + cm.Fore.GREEN+"""         -=--:.  """
+    print(random.choice([c1,c2,c3,c4]))
     print(cm.Fore.MAGENTA + "\n1- Test Ransomware Protection\n ")
     print(cm.Fore.MAGENTA +"2- Test Firewall Protection | Just ufw\n")
     print(cm.Fore.MAGENTA + "3- Roll back firewall test changes")
     print(cm.Fore.MAGENTA + "\n4- Spyware Test(camera and microphone)")
     print(cm.Fore.MAGENTA + "\n5- Exit")
-    print(cm.Fore.GREEN + "\nBy @TheCcortex - MIT license")
+    print(cm.Fore.YELLOW + "Note: You are using linux, and for linux, lot's of tests are limited!")
     main_inp = input(cm.Fore.RESET + "Which one? ")
     if main_inp == "1":
         tell_the_danger()
     elif main_inp == "2":
         Info_Style()
-        print("This test has two modes [easy mode, hard mode] for windows")
+        print("This test has six modes for windows")
         Info_Style()
         print("But you are using Linux, and for linux, we only have the hard mode")
-        x = input("Do you wanna continue? ["+cm.Fore.CYAN + "Y"+cm.Fore.RESET +"/" + cm.Fore.YELLOW + "N"+cm.Fore.RESET + "] ")
+        x = input("Do you wanna continue? ["+cm.Fore.CYAN + "Y"+cm.Fore.RESET +"/" + cm.Fore.YELLOW + "n"+cm.Fore.RESET + "] ")
         if x == "y" or x == "Y":
             BrokenWall()
         else:
