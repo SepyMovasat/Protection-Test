@@ -4,3 +4,4 @@
 <h3 align="center">👨‍💻 Usage</h3>
 <p align="center">Test your system's protection vs. zero-day ransomware, backdoor, spyware and even false positives in a safe test environment!</p>
 <h3 align="center">Check out our wiki page for getting started!</h3>
+<h3 align="center">New amazing updadtes coming...</h3>
