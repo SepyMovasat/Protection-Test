@@ -1,5 +1,6 @@
-- domain:     html
-  wwbody: |
+title: Buy me coffee with ethereum!
+context:
+  someHTML: 
     <a href="https://nowpayments.io/donation?api_key=JF7ZKA8-2TXMFHC-QD5AFX7-27D25VM" target="_blank">
      <img src="https://nowpayments.io/images/embeds/donation-button-white.svg" alt="Crypto donation button by NOWPayments">
     </a>
