@@ -7,7 +7,5 @@
 <h3 align="center">Check out our wiki page for getting started!</h3>
 <h3 align="center">New amazing updates coming...</h3>
 <div align="center>
-  <a href="https://nowpayments.io/donation?api_key=JF7ZKA8-2TXMFHC-QD5AFX7-27D25VM" target="_blank">
-    <img src="https://nowpayments.io/images/embeds/donation-button-white.svg" alt="Crypto donation button by NOWPayments">
-  </a>
+  <iframe href="https://nowpayments.io/embeds/donation-widget?api_key=JF7ZKA8-2TXMFHC-QD5AFX7-27D25VM" frameborder="0" scrolling="no" style="overflow-y: hidden;" width="354" height="680"></iframe>
 </div>
