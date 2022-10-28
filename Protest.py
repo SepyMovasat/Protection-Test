@@ -1,4 +1,4 @@
-# Created by @TheCcortex | Under MIT License #
+# Created by @Sepy_Movasat | Under MIT License #
 # IMPORTANT: JUST USE THIS FOR TESTING ANTI-VIRUS SOFTWARE """ONLY""" #
 # Please note: Although that this is for testing purposes, It may cause file loss(if used without care)#
 # JUST FOR WINDOWS #
