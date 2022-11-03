@@ -454,7 +454,7 @@ def Spyware_test(): # Here we test if your anti-virus can block us from accessin
         try:
             finalf = "The-Bad-Guys//"+file1 
             finalf2 = "The-Bad-Guys//"+file2
-            letssee = subprocess.call(["python", finalf])
+            letssee = subprocess.call(["python3", finalf])
         except FileNotFoundError:
             Warning_Style()
             print("The spyware file was not found!")
@@ -482,7 +482,7 @@ def Spyware_test(): # Here we test if your anti-virus can block us from accessin
             print("Trying to access your microphone to record a voice...")
             time.sleep(3)
         try:
-            letssee = subprocess.call(["python", finalf2])
+            letssee = subprocess.call(["python3", finalf2])
         except FileNotFoundError:
             Warning_Style()
             print("The spyware file was not found!")
