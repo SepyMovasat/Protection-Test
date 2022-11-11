@@ -2,7 +2,7 @@
 <h2 align="center">🔐 The world's easiest, most professional system protection test</h2>
 <img align="center" src="https://ccortex.ir/storage/2022/08/cco-protest-2-1536x384.png">
 <p align="center">Designer: Alireza Karimi</p>
-<img src="https://user-images.githubusercontent.com/81220038/201389799-044b7528-b066-4220-9b09-8dcd8e039bbe.png" style="height:50%; width:50%;text-align: center;align:center;display: flex; justify-content: center;">
+<img src="https://user-images.githubusercontent.com/81220038/201389799-044b7528-b066-4220-9b09-8dcd8e039bbe.png" style="height:50%; width:50%;display: flex; justify-content: center;">
 <h3 align="center">👨‍💻 Usage</h3>
 <p align="center">Test your system's protection vs. zero-day ransomware, backdoor, spyware and even false positives in a safe test environment!</p>
 <h3 align="center">Check out our wiki page for getting started!</h3>
