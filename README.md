@@ -1,7 +1,5 @@
 <h1 align="center">Protest | Protection-Test</h1>
 <h2 align="center">🔐 The world's easiest, most professional system protection test</h2>
-<img align="center" src="https://ccortex.ir/storage/2022/08/cco-protest-2-1536x384.png">
-<p align="center">Designer: Alireza Karimi</p>
 <div align="center" style="text-align: center; display: block; margin: 0 auto;">
     <img src="https://user-images.githubusercontent.com/81220038/201389799-044b7528-b066-4220-9b09-8dcd8e039bbe.png" style="width: 50%; height: 50%;" />
 </div>
