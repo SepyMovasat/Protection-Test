@@ -102,8 +102,8 @@ def Ransom():
         print("Starting the ransomware test...")
         time.sleep(5)
         try:
-            finalf = "The-Bad-Guys//"+file 
-            letssee = subprocess.call(["python",finalf])
+            finalf = "The-Bad-Guys/"+file 
+            letssee = subprocess.call(["python3",finalf])
             time.sleep(1.5)
             if letssee == 1 or letssee == 2:
                 cls()
@@ -224,7 +224,7 @@ def BrokenWall():
             Info_Style()
             print("Trying to disable your firewall...")
             time.sleep(7)
-            proc = subprocess.Popen(["The-Bad-Guys//"+file1], stdout=subprocess.PIPE, shell=True)
+            proc = subprocess.Popen(["sh ./The-Bad-Guys/"+file1], stdout=subprocess.PIPE, shell=True)
             (res, err) = proc.communicate()
             proc = err
             if proc == 1 or proc == 2:
@@ -235,7 +235,7 @@ def BrokenWall():
                 Info_Style()
                 print("Now trying to add an exclusion to your firewall...")
                 time.sleep(7)
-                proc = subprocess.Popen(["The-Bad-Guys//"+file2], stdout=subprocess.PIPE, shell=True)
+                proc = subprocess.Popen(["sh ./The-Bad-Guys/"+file2], stdout=subprocess.PIPE, shell=True)
                 (res, err) = proc.communicate()
                 proc = err
                 if proc == 1 or proc == 2:
@@ -284,7 +284,7 @@ def BrokenWall():
                 Info_Style()
                 print("Checking the firewall status...")
                 time.sleep(7)
-                proc1 = subprocess.Popen(["The-Good-Guys//WallStatus-l.sh"], stdout=subprocess.PIPE, shell=True)
+                proc1 = subprocess.Popen(["sh ./The-Good-Guys/WallStatus-l.sh"], stdout=subprocess.PIPE, shell=True)
                 (result, err) = proc1.communicate()
                 result = str(result)
                 if not "inactive" in result:
@@ -295,7 +295,7 @@ def BrokenWall():
                     Info_Style()
                     print("Now trying to add an exclusion to your firewall...")
                     time.sleep(7)
-                    proc = subprocess.Popen(["The-Bad-Guys//"+file2], stdout=subprocess.PIPE, shell=True)
+                    proc = subprocess.Popen(["sh ./The-Bad-Guys/"+file2], stdout=subprocess.PIPE, shell=True)
                     (res, err) = proc.communicate()
                     proc = err
                     if proc == 1 or proc == 2:
@@ -349,7 +349,7 @@ def BrokenWall():
                     print("And it was able to turn off your firewall!")
                     Info_Style()
                     print("Now trying to add an exclusion to your firewall...")
-                    proc = subprocess.Popen(["The-Bad-Guys//"+file2], stdout=subprocess.PIPE, shell=True)
+                    proc = subprocess.Popen(["sh ./The-Bad-Guys/"+file2], stdout=subprocess.PIPE, shell=True)
                     (res, err) = proc.communicate()
                     proc = err
                     time.sleep(7)
@@ -420,11 +420,11 @@ def Roll_back():
         Great_Style()
         print("Enabling ufw back on...")
         time.sleep(3)
-        subprocess.check_output("The-Good-Guys//FirewallBack-l.sh", shell=True)
+        subprocess.check_output("sh ./The-Good-Guys/FirewallBack-l.sh", shell=True)
         Great_Style()
         print("Removing the backdoor from exclusions...")
         time.sleep(3)
-        subprocess.check_output("The-Good-Guys//NoBackdoor-l.sh", shell=True)
+        subprocess.check_output("sh ./The-Good-Guys/NoBackdoor-l.sh", shell=True)
         Info_Style()
         print("Roll Back completed!")
         Info_Style()
@@ -452,8 +452,8 @@ def Spyware_test(): # Here we test if your anti-virus can block us from accessin
         print("Trying to access your camera to take a picture...")
         time.sleep(4)
         try:
-            finalf = "The-Bad-Guys//"+file1 
-            finalf2 = "The-Bad-Guys//"+file2
+            finalf = "The-Bad-Guys/"+file1 
+            finalf2 = "The-Bad-Guys/"+file2
             letssee = subprocess.call(["python3", finalf])
         except FileNotFoundError:
             Warning_Style()
@@ -466,11 +466,11 @@ def Spyware_test(): # Here we test if your anti-virus can block us from accessin
             print("Going back to the main menu in 12 seconds...")
             time.sleep(12)
             main_menu()
-        if os.path.isfile("The-Bad-Guys//Oh-Spy.png"):
+        if os.path.isfile("The-Bad-Guys/Oh-spy.png"):
             spy1 = True
             Warning_Style()
             print("Spyware was able to take a picture from you!")
-            os.remove("The-Bad-Guys//Oh-Spy.png")
+            os.remove("The-Bad-Guys/Oh-spy.png")
             Info_Style()
             print("Trying to access your microphone to record a voice...")
             time.sleep(3)
@@ -494,8 +494,8 @@ def Spyware_test(): # Here we test if your anti-virus can block us from accessin
             print("Going back to the main menu in 12 seconds...")
             time.sleep(12)
             main_menu()   
-        if os.path.isfile("The-Bad-Guys//Oh-Spy.wav"):
-            os.remove("The-Bad-Guys//Oh-Spy.wav")
+        if os.path.isfile("The-Bad-Guys//Oh-spy.wav"):
+            os.remove("The-Bad-Guys//Oh-spy.wav")
             spy2 = True
         else:
             spy2 = False
